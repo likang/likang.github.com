@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[可以思考]]></title>
-  <link href="http://likang.me/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Life | 可以思考]]></title>
+  <link href="http://likang.me/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://likang.me/"/>
   <updated>2011-11-22T23:00:22+08:00</updated>
   <id>http://likang.me/</id>
