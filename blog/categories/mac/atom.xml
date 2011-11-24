@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Mac | 可以思考]]></title>
+  <link href="http://likang.me/blog/categories/mac/atom.xml" rel="self"/>
+  <link href="http://likang.me/"/>
+  <updated>2011-11-24T23:20:49+08:00</updated>
+  <id>http://likang.me/</id>
+  <author>
+    <name><![CDATA[likang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[使用 iTerm2 作为默认终端]]></title>
+    <link href="http://likang.me/blog/2011/11/24/use-iterm2-as-my-default-terminal/"/>
+    <updated>2011-11-24T22:16:00+08:00</updated>
+    <id>http://likang.me/blog/2011/11/24/use-iterm2-as-my-default-terminal</id>
+    <content type="html"><![CDATA[<p>一直以来 Mac 默认的终端也蛮好用的，但是今天发现 SSH到远程服务器之后，vim无法正常的split分屏显示，让我很郁闷，于是就找到了iTerm2.</p>
+
+<p>iTerm2是从iTerm的基础上开发的，只不过iTerm不再更新，所以这位George Nachman兄就接手继续做起来，修复了很多Bug，一天用下来还是蛮稳定的，而且功能非常强大，在此表示遥远的感谢:)</p>
+
+<h3>功能介绍</h3>
+
+<ul>
+<li>窗口分割<br/>
+支持横/竖/混合等，每个窗口保持一个独立session</li>
+<li>全局热键<br/>
+通过自定义热键的方式迅速将iTerm2 '召唤' 到前台</li>
+<li>搜索<br/>
+支持Mac风格的搜索条，Cmd-F可快速搜索当前页面，支持正则</li>
+<li>自动完成<br/>
+按Cmd-; 可以打开命令自动完成的下拉菜单</li>
+<li>无鼠标复制<br/>
+在搜索时，可按shift-tab或者tab左右扩展搜索内容并自动复制到剪切板，按Option-enter直接将搜索匹配结果粘贴到命令行</li>
+<li>历史复制<br/>
+按Cmd-shift-h可打开剪切板历史记录，甚至还可以将记录保存到磁盘</li>
+<li>快照回放<br/>
+按Cmd-opt-b可打开快照记录，然后使用左右键来查看某个时间的快照，按Esq返回</li>
+<li>丰富的配置<br/>
+支持各种自定义快捷键、皮肤、透明度设置、窗口背景图片等</li>
+<li>支持Lion全屏</li>
+<li>支持256色<br/>
+顺便说一句，某些服务器上可能不支持256色，导致SSH上去之后看不到颜色，此时只要在Prefences->Profiles->Terminal里设置一下普通的xterm就可以了</li>
+<li>Unix风格<br/>
+保持原汁原味Unix风格的操作习惯</li>
+<li>颜色友好<br/>
+启用Smart Cursor后，可以自动的改变光标块颜色使之与选中的文字颜色产生高对比,当你找不到光标时，甚至还可以按Cmd-/让光标突出显示</li>
+<li>鼠标支持</li>
+<li>支持Growl 通知</li>
+<li>Exposé 效果
+按Cmd-opt-e 打开内置的Exposé 效果</li>
+<li>支持多用户配置</li>
+<li>多语言支持</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

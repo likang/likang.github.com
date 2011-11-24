@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Started Up - 可以思考</title>
+  <title>使用 iTerm2 作为默认终端 - 可以思考</title>
   <meta name="author" content="likang">
 
   
-  <meta name="description" content="经过一番思想斗争，决定还是找个地方写点东西，用冯唐的话说，用文字打败时间:D 域名 照例在Godaddy上买的域名，本来想用自己其他的域名，后来想想还是用likang.me吧，幸好没被注册掉:) 过程中发现貌似Godaddy跟支付宝的合作结束了，网站上没有支付宝的付款选项了，只好刷了信用卡， &hellip;">
+  <meta name="description" content="一直以来 Mac 默认的终端也蛮好用的，但是今天发现 SSH到远程服务器之后，vim无法正常的split分屏显示，让我很郁闷，于是就找到了iTerm2. iTerm2是从iTerm的基础上开发的，只不过iTerm不再更新，所以这位George Nachman兄就接手继续做起来，修复了很多Bug， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://likang.me/blog/2011/11/22/blog-started-up">
+  <link rel="canonical" href="http://likang.me/blog/2011/11/24/use-iterm2-as-my-default-terminal">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,7 +63,7 @@
   
   <header>
     
-      <h1 class="entry-title">Blog Started Up</h1>
+      <h1 class="entry-title">使用 iTerm2 作为默认终端</h1>
     
     
       <p class="meta">
@@ -79,32 +79,51 @@
   
 
 
-<time datetime="2011-11-22T11:15:00+08:00" pubdate data-updated="true">Nov 22<span>nd</span>, 2011</time>
+<time datetime="2011-11-24T22:16:00+08:00" pubdate data-updated="true">Nov 24<span>th</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>经过一番思想斗争，决定还是找个地方写点东西，用冯唐的话说，用文字打败时间:D</p>
+<div class="entry-content"><p>一直以来 Mac 默认的终端也蛮好用的，但是今天发现 SSH到远程服务器之后，vim无法正常的split分屏显示，让我很郁闷，于是就找到了iTerm2.</p>
 
-<h2>域名</h2>
+<p>iTerm2是从iTerm的基础上开发的，只不过iTerm不再更新，所以这位George Nachman兄就接手继续做起来，修复了很多Bug，一天用下来还是蛮稳定的，而且功能非常强大，在此表示遥远的感谢:)</p>
 
-<p>照例在Godaddy上买的域名，本来想用自己其他的域名，后来想想还是用likang.me吧，幸好没被注册掉:)</p>
+<h3>功能介绍</h3>
 
-<p>过程中发现貌似Godaddy跟支付宝的合作结束了，网站上没有支付宝的付款选项了，只好刷了信用卡，在盗卡盛行的今天，这是我在第二个网站上直接填写信用卡信息付款(第一家是Apple的AppStore)，心里还是有点不靠谱的感觉的=.=<br/>
-<em>注：好吧现在发现支付宝又神奇的出现在Godaddy上了</em></p>
+<ul>
+<li>窗口分割<br/>
+支持横/竖/混合等，每个窗口保持一个独立session</li>
+<li>全局热键<br/>
+通过自定义热键的方式迅速将iTerm2 &#8216;召唤&#8217; 到前台</li>
+<li>搜索<br/>
+支持Mac风格的搜索条，Cmd-F可快速搜索当前页面，支持正则</li>
+<li>自动完成<br/>
+按Cmd-; 可以打开命令自动完成的下拉菜单</li>
+<li>无鼠标复制<br/>
+在搜索时，可按shift-tab或者tab左右扩展搜索内容并自动复制到剪切板，按Option-enter直接将搜索匹配结果粘贴到命令行</li>
+<li>历史复制<br/>
+按Cmd-shift-h可打开剪切板历史记录，甚至还可以将记录保存到磁盘</li>
+<li>快照回放<br/>
+按Cmd-opt-b可打开快照记录，然后使用左右键来查看某个时间的快照，按Esq返回</li>
+<li>丰富的配置<br/>
+支持各种自定义快捷键、皮肤、透明度设置、窗口背景图片等</li>
+<li>支持Lion全屏</li>
+<li>支持256色<br/>
+顺便说一句，某些服务器上可能不支持256色，导致SSH上去之后看不到颜色，此时只要在Prefences->Profiles->Terminal里设置一下普通的xterm就可以了</li>
+<li>Unix风格<br/>
+保持原汁原味Unix风格的操作习惯</li>
+<li>颜色友好<br/>
+启用Smart Cursor后，可以自动的改变光标块颜色使之与选中的文字颜色产生高对比,当你找不到光标时，甚至还可以按Cmd-/让光标突出显示</li>
+<li>鼠标支持</li>
+<li>支持Growl 通知</li>
+<li>Exposé 效果
+按Cmd-opt-e 打开内置的Exposé 效果</li>
+<li>支持多用户配置</li>
+<li>多语言支持</li>
+</ul>
 
-<h2>托管方案</h2>
-
-<p>这个过程让真是高潮迭起=.= 一开始是要用Godaddy提供的免费hosting + Wordpress的，况且使用Windows + IIS7的方案的话Wordpress上还没有广告，但是速度不理想，没办法，放弃。</p>
-
-<p>于是跑去新浪的SAE(Sina App Engine)，SAE做的还是不错的，提供的一系列分布式服务用起来都很方便，而且速度也不错。但是要命的是绑定域名的话需要提供备案信息:( 不是我不想备案，只是像我这样国内没有主机的备案起来实在是不可能的事。于是想想算了吧，还是另寻他处。<br/>
-(BTW: SAE上有开发奖励，我决定做点东西赚赚云豆攒起来:D )</p>
-
-<p>然后想起Github上是有Pages服务的，我就搜了一下有没有方便的工具来扩展这个看似简单的功能。一搜发现我真是孤陋寡闻，竟然很早就已经有成熟的Jekyll和Octopress了，虽然暂时我对Ruby不感冒，但粗看之后我立即被这个简单强大优雅的东东给吸引了，而且Github还非常给力的支持域名绑定，于是我毫不犹豫的就动手把环境搭起来了:)</p>
-
-<p>于是最终就是这个样子啦，Octopress + Github，万事俱备:D</p>
 </div>
 
 
@@ -127,12 +146,12 @@
   
 
 
-<time datetime="2011-11-22T11:15:00+08:00" pubdate data-updated="true">Nov 22<span>nd</span>, 2011</time>
+<time datetime="2011-11-24T22:16:00+08:00" pubdate data-updated="true">Nov 24<span>th</span>, 2011</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/life/'>Life</a>
+    <a class='category' href='/blog/categories/mac/'>Mac</a>
   
 </span>
 
@@ -148,8 +167,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2011/11/23/build-cx-oracle-for-python/" title="Previous Post: cx_Oracle 编译安装及简单使用方法">&laquo; cx_Oracle 编译安装及简单使用方法</a>
       
-        <a class="basic-alignment right" href="/blog/2011/11/23/build-cx-oracle-for-python/" title="next Post: cx_Oracle 编译安装及简单使用方法">cx_Oracle 编译安装及简单使用方法 &raquo;</a>
       
     </p>
   </footer>
@@ -203,8 +222,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://likang.me/blog/2011/11/22/blog-started-up/';
-        var disqus_url = 'http://likang.me/blog/2011/11/22/blog-started-up/';
+        var disqus_identifier = 'http://likang.me/blog/2011/11/24/use-iterm2-as-my-default-terminal/';
+        var disqus_url = 'http://likang.me/blog/2011/11/24/use-iterm2-as-my-default-terminal/';
         var disqus_script = 'embed.js';
       
     (function () {
