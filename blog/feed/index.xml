@@ -7,12 +7,52 @@
   <title type="text">东篱</title>
   <subtitle type="text">文字打败时间</subtitle>
 
-  <updated>2012-01-11T17:47:01Z</updated>
+  <updated>2012-01-14T14:29:43Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://likang.me/blog" />
   <id>http://likang.me/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://likang.me/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://likang.me/blog</uri>
+    </author>
+    <title type="html"><![CDATA[2011 个人总结]]></title>
+    <link rel="alternate" type="text/html" href="http://likang.me/blog/2012/01/14/personal-review-of-2011" />
+    <id>http://likang.me/blog/2012/01/14/personal-review-of-2011</id>
+    <updated>2012-01-14T21:18:03Z</updated>
+    <published>2012-01-14T21:18:03Z</published>
+    <category scheme="http://likang.me/blog" term="Life" />
+    <summary type="html"><![CDATA[2011 个人总结]]></summary>
+    <content type="html" xml:base="http://likang.me/blog/2012/01/14/personal-review-of-2011"><![CDATA[<p>马上要回家过年了，意味着又在外面漂了一年。</p>
+<p>回顾这一年，似乎是一个平常的年份。仍然在上海，仍然在同一家公司，仍然一个人，但改变已发生。</p>
+<p><strong>2011  回顾</strong></p>
+<p>工作</p>
+<ul>
+<li>形成了比较好的职业感觉，越深入，越知道自己欠缺的太多</li>
+<li>圣诞节前，非常好的领导回了美国，原因未知，但很理解，也深深遗憾。</li>
+<li>在公司待了三年后，一只脚已踏上创业的路</li>
+<li>特别感谢Python，帮到很多忙，也越来越喜欢这个语言</li>
+</ul>
+<p>生活</p>
+<ul>
+<li>丢了东西</li>
+</ul>
+<p><strong>2012  期望</strong></p>
+<p>工作</p>
+<ul>
+<li>能在新公司真正快速成长，体现价值</li>
+<li>如无其他语言学习计划插脚，学习js，学习node.js</li>
+<li>业余时间做出并发布一款iOS游戏</li>
+</ul>
+<p>生活</p>
+<ul>
+<li>锻炼身体，最好是能和朋友一起</li>
+<li>写几篇小小的童话故事贴在这里:D</li>
+<li>攒点钱，看世界。五月去澳洲，十月去欧洲。</li>
+</ul>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -295,31 +335,5 @@ except cx_Oracle.DatabaseError, e:
   sys.exit(2)
 </code></pre>
 <p>最后，连接默认是没有设置autocommit的，更删改的话需要commit。</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://likang.me/blog</uri>
-    </author>
-    <title type="html"><![CDATA[Blog Started Up]]></title>
-    <link rel="alternate" type="text/html" href="http://likang.me/blog/2011/11/22/blog-started-up" />
-    <id>http://likang.me/blog/2011/11/22/blog-started-up</id>
-    <updated>2011-11-22T11:15:00Z</updated>
-    <published>2011-11-22T11:15:00Z</published>
-    <category scheme="http://likang.me/blog" term="Life" />
-    <summary type="html"><![CDATA[Blog Started Up]]></summary>
-    <content type="html" xml:base="http://likang.me/blog/2011/11/22/blog-started-up"><![CDATA[<p>经过一番思想斗争，决定还是找个地方写点东西，用冯唐的话说，用文字打败时间:D</p>
-<h2>域名</h2>
-<p>照例在Godaddy上买的域名，本来想用自己其他的域名，后来想想还是用likang.me吧，幸好没被注册掉:)</p>
-<p>过程中发现貌似Godaddy跟支付宝的合作结束了，网站上没有支付宝的付款选项了，只好刷了信用卡，在盗卡盛行的今天，这是我在第二个网站上直接填写信用卡信息付款(第一家是Apple的AppStore)，心里还是有点不靠谱的感觉的=.=<br />
-<em>注：好吧现在发现支付宝又神奇的出现在Godaddy上了</em></p>
-<h2>托管方案</h2>
-<p>这个过程让真是高潮迭起=.= 一开始是要用Godaddy提供的免费hosting + Wordpress的，况且使用Windows + IIS7的方案的话Wordpress上还没有广告，但是速度不理想，没办法，放弃。<br />
-</p>
-<p>于是跑去新浪的SAE(Sina App Engine)，SAE做的还是不错的，提供的一系列分布式服务用起来都很方便，而且速度也不错。但是要命的是绑定域名的话需要提供备案信息:( 不是我不想备案，只是像我这样国内没有主机的备案起来实在是不可能的事。于是想想算了吧，还是另寻他处。<br />
-(BTW: SAE上有开发奖励，我决定做点东西赚赚云豆攒起来:D )<br />
-</p>
-<p>然后想起Github上是有Pages服务的，我就搜了一下有没有方便的工具来扩展这个看似简单的功能。一搜发现我真是孤陋寡闻，竟然很早就已经有成熟的Jekyll和Octopress了，虽然暂时我对Ruby不感冒，但粗看之后我立即被这个简单强大优雅的东东给吸引了，而且Github还非常给力的支持域名绑定，于是我毫不犹豫的就动手把环境搭起来了:)</p>
-<p>于是最终就是这个样子啦，Octopress + Github，万事俱备:D</p>]]></content>
   </entry>
 </feed>
