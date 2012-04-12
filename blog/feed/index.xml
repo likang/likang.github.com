@@ -7,12 +7,34 @@
   <title type="text">东篱</title>
   <subtitle type="text">文字打败时间</subtitle>
 
-  <updated>2012-02-12T07:55:33Z</updated>
+  <updated>2012-04-12T15:41:09Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://likang.me/blog" />
   <id>http://likang.me/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://likang.me/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://likang.me/blog</uri>
+    </author>
+    <title type="html"><![CDATA[两片树叶]]></title>
+    <link rel="alternate" type="text/html" href="http://likang.me/blog/2012/04/12/two-leaves" />
+    <id>http://likang.me/blog/2012/04/12/two-leaves</id>
+    <updated>2012-04-12T23:30:56Z</updated>
+    <published>2012-04-12T23:30:56Z</published>
+    <category scheme="http://likang.me/blog" term="Life" />
+    <summary type="html"><![CDATA[两片树叶]]></summary>
+    <content type="html" xml:base="http://likang.me/blog/2012/04/12/two-leaves"><![CDATA[<p>有两片树叶，离的很近，但不在一枝上。</p>
+<p>刚发芽的时候，都对这个世界充满了好奇，微风吹过，细雨滑过，阳光，均匀的撒过。</p>
+<p>慢慢的，身子都舒展了开来，学会了随风摇曳，也注意到了旁边的那一片。却都默不做声。</p>
+<p>一天，起了大风，树叶们左摇右晃，几乎要离开树干，忽然，两片被风吹到了一起，划过的那一刻，发出沙的一声……很奇妙，两个都笑了，笑的哗哗的。</p>
+<p>秋天到了。</p>
+<p>“我可能要先下去了”，一片说，“希望落的不远”。</p>
+<p>大风又起。它纵身一跃，翻转在忽左忽右的风中……</p>
+<p>树上的另一片借着风向转身，努力搜寻着地面，“看见你了……”，可惜地上的它听不到。</p>
+<p>一个午后，“刚才你在空中真美”一片对另一片说。</p>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -211,21 +233,5 @@
 <p>晚上Hang同学临走前逛到我们办公室，碰巧办公室只剩我和J同学俩人都没吃饭，于是欢乐的一起出去吃，在刺骨的寒风中(真没夸张，因为我们都穿得单薄=.= 而且拒绝了打车的诱惑)走了20分钟到餐馆，仨人叫了四瓶啤酒五个家常菜，围着一个小桌子，很温暖 ^_^</p>
 <p>聊聊吃吃就到10点多了，很久没跟Hang同学小聚，机会无多，万分开心</p>
 <p>一个是和蔼可亲的领导，一个是童真善良的师傅，我真幸运</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://likang.me/blog</uri>
-    </author>
-    <title type="html"><![CDATA[又安装了一个黑苹果]]></title>
-    <link rel="alternate" type="text/html" href="http://likang.me/blog/2011/11/29/made-another-hackintosh" />
-    <id>http://likang.me/blog/2011/11/29/made-another-hackintosh</id>
-    <updated>2011-11-29T20:14:00Z</updated>
-    <published>2011-11-29T20:14:00Z</published>
-    <category scheme="http://likang.me/blog" term="Mac" />
-    <summary type="html"><![CDATA[又安装了一个黑苹果]]></summary>
-    <content type="html" xml:base="http://likang.me/blog/2011/11/29/made-another-hackintosh"><![CDATA[<p>不知道我这样做是不是'践踏'了Mac OSX的知识产权=.= 但是我累计已经在三台机器上装了Hacintosh</p>
-<p>公司最近在做Android/iOS开发者认证(当然认证通过有工资提升啦)，我有个朋友报名了iOS的开发者认证，可是没有apple装备，家里也已经有了4台笔记本(其中有一台SSD小黑，口水ing），短期内实在不打算再入一台机器，就找我帮忙装一个Hacintosh.</p>
-<p>过程还算顺利，朋友那过来的是一台年代久远的dell D630，网上已经有同学放出了所有的dsdt/kext文件，所以无任何压力。只是不知为何笔记本自带键盘无法驱动，我尝试了添加/删除AppleACPIPS2Nub.kext及ApplePS2Controller.kext仍然无果，鉴于时间不早，就先让朋友拿回家自己找个USB键盘插上去用了。</p>]]></content>
   </entry>
 </feed>
