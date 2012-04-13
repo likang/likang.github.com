@@ -12,6 +12,7 @@
 <link rel="alternate" type="application/atom+xml" title="Atom 1.0"
 href="/blog/feed/atom" />
 <link rel='stylesheet' href='/styles/screen.css' type='text/css' />
+<link rel='stylesheet' href='/styles/prettify.css' type='text/css' />
 
 
   </head>
@@ -100,8 +101,24 @@ Powered by <a href="http://www.blogofile.com">Blogofile</a>.
 
       </div> <!-- End Footer -->
     </div> <!-- End Content -->
+    
+      <script type="text/javascript" src="/javascripts/prettify.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            if (!document.getElementsByTagName) return;
+            var codes = document.getElementsByTagName("code");
+            for (var i=0; i < codes.length; i++) {
+                codes[i].setAttribute("class", "prettyprint");
+            }
+            prettyPrint();
+        }
+    
+    </script>
+
+
   </body>
 </html>
+
 
 
 
