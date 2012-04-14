@@ -84,7 +84,7 @@ href="/blog/feed/atom" />
     
   <p>一直以来 Mac 默认的终端也蛮好用的，但是今天发现 SSH到远程服务器之后，vim无法正常的split分屏显示，让我很郁闷，于是就找到了iTerm2.</p>
 <p>iTerm2是从iTerm的基础上开发的，只不过iTerm不再更新，所以这位George Nachman兄就接手继续做起来，修复了很多Bug，一天用下来还是蛮稳定的，而且功能非常强大，在此表示遥远的感谢:)</p>
-<p><strong>功能介绍</strong></p>
+<h3>功能介绍</h3>
 <table>
 <tr>
   <th width="30%">功能</th>
@@ -166,7 +166,7 @@ href="/blog/feed/atom" />
     
   <p>cx_Oracle 是Python的一个扩展模块，提供符合Python数据库API规范的Oracle访问支持，是Python下访问Oracle的利器，不过鉴于其版本众多，很多人在安装上就遇到了障碍，我这里简单记录一下。<br />
 最普适的方法就是编译安装了，官方有详尽的<a href="http://cx-oracle.sourceforge.net/BUILD.txt">安装文档</a>，我这里基本只是翻译。</p>
-<p><strong>准备</strong></p>
+<h3>准备</h3>
 <p>首先下载两个东西：</p>
 <ul>
 <li><a href="http://cx-oracle.sourceforge.net/">cx_Oracle</a> </li>
@@ -184,7 +184,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME
 <pre><code>cd $ORACLE_HOME
 ln -s libclntsh.so.x.x libclntsh.so
 </code></pre>
-<p><strong>编译安装</strong></p>
+<h3>编译安装</h3>
 <p>接下来非常简单，进入你的cx_Oracle源码目录后执行以下两条语句就OK了</p>
 <pre><code>python setup.py build
 python setup.py install
@@ -198,7 +198,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 &gt;&gt;&gt;
 </code></pre>
 <p>没有异常的话就说明安装成功了。</p>
-<p><strong>简单的使用</strong></p>
+<h3>简单的使用</h3>
 <pre><code>#!/usr/bin/python
 # -*- encoding: utf-8 -*-
 import cx_Oracle
@@ -248,11 +248,11 @@ except cx_Oracle.DatabaseError, e:
 
     
   <p>经过一番思想斗争，决定还是找个地方写点东西，用冯唐的话说，用文字打败时间:D</p>
-<p><strong>域名</strong></p>
+<h3>域名</h3>
 <p>照例在Godaddy上买的域名，本来想用自己其他的域名，后来想想还是用likang.me吧，幸好没被注册掉:)</p>
 <p>过程中发现貌似Godaddy跟支付宝的合作结束了，网站上没有支付宝的付款选项了，只好刷了信用卡，在盗卡盛行的今天，这是我在第二个网站上直接填写信用卡信息付款(第一家是Apple的AppStore)，心里还是有点不靠谱的感觉的=.=<br />
 <em>注：好吧现在发现支付宝又神奇的出现在Godaddy上了</em></p>
-<p><strong>托管方案</strong></p>
+<h3>托管方案</h3>
 <p>这个过程让真是曲折=.= 一开始是要用Godaddy提供的免费hosting + Wordpress的，况且使用Windows + IIS7的方案的话Wordpress上还没有广告，但是速度不理想，没办法，放弃。<br />
 </p>
 <p>于是跑去新浪的SAE(Sina App Engine)，SAE做的还是不错的，提供的一系列分布式服务用起来都很方便，而且速度也不错。但是要命的是绑定域名的话需要提供备案信息:( 不是我不想备案，只是像我这样国内没有主机的备案起来实在是不可能的事。于是想想算了吧，还是另寻他处。<br />
