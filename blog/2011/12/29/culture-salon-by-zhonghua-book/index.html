@@ -17,21 +17,46 @@ href="/blog/feed/atom" />
 
   </head>
   <body>
-    <div id="wrapper">
-      <div id="content">
+    <div id="page">
+      
+  <div id="header">
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/blog">Archive</a>
+    </li>
+    <li>
+      <a href="/blog/feed">Subscribe</a>
+    </li>
+    <li>
+      <a href="https://github.com/likang">Github</a>
+    </li>
+  </ul>
+  <h1>
+    <a href="/">东篱</a>
+  </h1>
+</div>
+<div id="pagestripe">
+  <div id="pageblock"></div>
+</div>
+
+
+      <div id="content" class="single">
         
 
-<div class="hentry">
-  <h3 class="entry-title">
+<div class="post">
+  <h2>
     <a href="/blog/2011/12/29/culture-salon-by-zhonghua-book" rel="bookmark" title="Permanent Link to “百年 再出发” 中华书局文化沙龙">“百年 再出发” 中华书局文化沙龙</a> 
-    <abbr> · 2011/12/29 · 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2011/12/29 · 
 
 
 <a href='/blog/category/life'>Life</a>
 
-</abbr> 
-
-  </h3>
+  </h4>
 
     
   <p>圣诞节在杭同学家跨年，认识的新朋友小龟提到过两天在复旦会有个中华书局的沙龙，我很久都没有回学校听讲座了，又是中华书局举办的沙龙，所以也蛮感兴趣的，于是利用一下弹性考勤，早上早一个小时到公司，下午得以提前一个小时闪人。</p>
@@ -48,14 +73,14 @@ href="/blog/feed/atom" />
 
 
 <div id="pagination">
- <p class="previous left">
+ <p class="alignleft">
    « <a href="/blog/2011/12/25/christmas-eve-with-friends">别样圣诞夜</a>
  </p>
- <p class="next right">
+ <p class="alignright">
    <a href="/blog/2011/12/30/a-lucky-red-string">本命年小红绳</a> »
  </p>
 </div>
-<div class="clear"></div>
+<div class="break"></div>
 
 
 <div id="disqus_thread"></div>
@@ -64,52 +89,32 @@ href="/blog/feed/atom" />
 </script>
 
       </div><!-- End Main Block -->
-      
-  <div id="sidebar">
-  <div class="widget">
-    <h1 id="branding">
-      <a href="/">东篱</a>
-    </h1>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="https://github.com/likang">Github</a></li>
-      <li><a href="/blog">Archive</a></li>
-      <li><a href="/blog/feed">Subscribe</a></li>
-  </nav>
-</div>
-
-
-      <div class="clear"></div><!-- End Sitebar -->
-      <div id="footer">
+      <div id="footer" class="single">
         
   <p id="credits">
-Powered by <a href="http://www.blogofile.com">Blogofile</a>. 
+Likang.me uses <a href="http://www.ulfpettersson.se/design/modern/">Modern</a> and powered by <a href="http://www.blogofile.com">Blogofile</a>. 
 <br>
 </p>
+
+<script type="text/javascript" src="/javascripts/prettify.js"></script>
+<script type="text/javascript">
+    window.onload = function(){
+        if (!document.getElementsByTagName) return;
+        var codes = document.getElementsByTagName("code");
+        for (var i=0; i < codes.length; i++) {
+            codes[i].setAttribute("class", "prettyprint");
+            codes[i].setAttribute("className", "prettyprint"); // for IE
+        }
+        prettyPrint();
+    }
+
+</script>
 
 
       </div> <!-- End Footer -->
     </div> <!-- End Content -->
-    
-      <script type="text/javascript" src="/javascripts/prettify.js"></script>
-    <script type="text/javascript">
-        window.onload = function(){
-            if (!document.getElementsByTagName) return;
-            var codes = document.getElementsByTagName("code");
-            for (var i=0; i < codes.length; i++) {
-                codes[i].setAttribute("class", "prettyprint");
-                codes[i].setAttribute("className", "prettyprint"); // for IE
-            }
-            prettyPrint();
-        }
-    
-    </script>
-
-
   </body>
 </html>
-
 
 
 

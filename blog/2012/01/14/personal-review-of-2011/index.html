@@ -17,21 +17,46 @@ href="/blog/feed/atom" />
 
   </head>
   <body>
-    <div id="wrapper">
-      <div id="content">
+    <div id="page">
+      
+  <div id="header">
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/blog">Archive</a>
+    </li>
+    <li>
+      <a href="/blog/feed">Subscribe</a>
+    </li>
+    <li>
+      <a href="https://github.com/likang">Github</a>
+    </li>
+  </ul>
+  <h1>
+    <a href="/">东篱</a>
+  </h1>
+</div>
+<div id="pagestripe">
+  <div id="pageblock"></div>
+</div>
+
+
+      <div id="content" class="single">
         
 
-<div class="hentry">
-  <h3 class="entry-title">
+<div class="post">
+  <h2>
     <a href="/blog/2012/01/14/personal-review-of-2011" rel="bookmark" title="Permanent Link to 2011 个人总结">2011 个人总结</a> 
-    <abbr> · 2012/01/14 · 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2012/01/14 · 
 
 
 <a href='/blog/category/life'>Life</a>
 
-</abbr> 
-
-  </h3>
+  </h4>
 
     
   <p>马上要回家过年了，意味着又在外面漂了一年。</p>
@@ -69,14 +94,14 @@ href="/blog/feed/atom" />
 
 
 <div id="pagination">
- <p class="previous left">
+ <p class="alignleft">
    « <a href="/blog/2012/01/05/move-to-blogofile">迁移到 blogofile</a>
  </p>
- <p class="next right">
+ <p class="alignright">
    <a href="/blog/2012/02/12/transplant-trees">春节移树</a> »
  </p>
 </div>
-<div class="clear"></div>
+<div class="break"></div>
 
 
 <div id="disqus_thread"></div>
@@ -85,52 +110,32 @@ href="/blog/feed/atom" />
 </script>
 
       </div><!-- End Main Block -->
-      
-  <div id="sidebar">
-  <div class="widget">
-    <h1 id="branding">
-      <a href="/">东篱</a>
-    </h1>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="https://github.com/likang">Github</a></li>
-      <li><a href="/blog">Archive</a></li>
-      <li><a href="/blog/feed">Subscribe</a></li>
-  </nav>
-</div>
-
-
-      <div class="clear"></div><!-- End Sitebar -->
-      <div id="footer">
+      <div id="footer" class="single">
         
   <p id="credits">
-Powered by <a href="http://www.blogofile.com">Blogofile</a>. 
+Likang.me uses <a href="http://www.ulfpettersson.se/design/modern/">Modern</a> and powered by <a href="http://www.blogofile.com">Blogofile</a>. 
 <br>
 </p>
+
+<script type="text/javascript" src="/javascripts/prettify.js"></script>
+<script type="text/javascript">
+    window.onload = function(){
+        if (!document.getElementsByTagName) return;
+        var codes = document.getElementsByTagName("code");
+        for (var i=0; i < codes.length; i++) {
+            codes[i].setAttribute("class", "prettyprint");
+            codes[i].setAttribute("className", "prettyprint"); // for IE
+        }
+        prettyPrint();
+    }
+
+</script>
 
 
       </div> <!-- End Footer -->
     </div> <!-- End Content -->
-    
-      <script type="text/javascript" src="/javascripts/prettify.js"></script>
-    <script type="text/javascript">
-        window.onload = function(){
-            if (!document.getElementsByTagName) return;
-            var codes = document.getElementsByTagName("code");
-            for (var i=0; i < codes.length; i++) {
-                codes[i].setAttribute("class", "prettyprint");
-                codes[i].setAttribute("className", "prettyprint"); // for IE
-            }
-            prettyPrint();
-        }
-    
-    </script>
-
-
   </body>
 </html>
-
 
 
 

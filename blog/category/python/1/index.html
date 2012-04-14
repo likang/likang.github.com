@@ -17,21 +17,46 @@ href="/blog/feed/atom" />
 
   </head>
   <body>
-    <div id="wrapper">
-      <div id="content">
+    <div id="page">
+      
+  <div id="header">
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/blog">Archive</a>
+    </li>
+    <li>
+      <a href="/blog/feed">Subscribe</a>
+    </li>
+    <li>
+      <a href="https://github.com/likang">Github</a>
+    </li>
+  </ul>
+  <h1>
+    <a href="/">东篱</a>
+  </h1>
+</div>
+<div id="pagestripe">
+  <div id="pageblock"></div>
+</div>
+
+
+      <div id="content" class="single">
         
   
-<div class="hentry">
-  <h3 class="entry-title">
+<div class="post">
+  <h2>
     <a href="/blog/2012/04/13/calculate-character-width-in-python" rel="bookmark" title="Permanent Link to Python中计算字符宽度">Python中计算字符宽度</a> 
-    <abbr> · 2012/04/13 · 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2012/04/13 · 
 
 
 <a href='/blog/category/python'>Python</a>
 
-</abbr> 
-
-  </h3>
+  </h4>
 
     
   <p>最近在用python写一个CLI小程序，其中涉及到计算字符宽度，目标是以友好的方式将一个长字符串截取为等宽的片段。</p>
@@ -120,17 +145,17 @@ def get_width( o ):
 
 
   
-<div class="hentry">
-  <h3 class="entry-title">
+<div class="post">
+  <h2>
     <a href="/blog/2011/11/23/build-cx-oracle-for-python" rel="bookmark" title="Permanent Link to cx_Oracle 编译安装及简单使用方法">cx_Oracle 编译安装及简单使用方法</a> 
-    <abbr> · 2011/11/23 · 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2011/11/23 · 
 
 
 <a href='/blog/category/python'>Python</a>
 
-</abbr> 
-
-  </h3>
+  </h4>
 
     
   <p>cx_Oracle 是Python的一个扩展模块，提供符合Python数据库API规范的Oracle访问支持，是Python下访问Oracle的利器，不过鉴于其版本众多，很多人在安装上就遇到了障碍，我这里简单记录一下。<br />
@@ -204,55 +229,35 @@ except cx_Oracle.DatabaseError, e:
 
 <div id="pagination">
 </div>
-<div class="clear"></div>
+<div class="break"></div>
 
       </div><!-- End Main Block -->
-      
-  <div id="sidebar">
-  <div class="widget">
-    <h1 id="branding">
-      <a href="/">东篱</a>
-    </h1>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="https://github.com/likang">Github</a></li>
-      <li><a href="/blog">Archive</a></li>
-      <li><a href="/blog/feed">Subscribe</a></li>
-  </nav>
-</div>
-
-
-      <div class="clear"></div><!-- End Sitebar -->
-      <div id="footer">
+      <div id="footer" class="single">
         
   <p id="credits">
-Powered by <a href="http://www.blogofile.com">Blogofile</a>. 
+Likang.me uses <a href="http://www.ulfpettersson.se/design/modern/">Modern</a> and powered by <a href="http://www.blogofile.com">Blogofile</a>. 
 <br>
 </p>
+
+<script type="text/javascript" src="/javascripts/prettify.js"></script>
+<script type="text/javascript">
+    window.onload = function(){
+        if (!document.getElementsByTagName) return;
+        var codes = document.getElementsByTagName("code");
+        for (var i=0; i < codes.length; i++) {
+            codes[i].setAttribute("class", "prettyprint");
+            codes[i].setAttribute("className", "prettyprint"); // for IE
+        }
+        prettyPrint();
+    }
+
+</script>
 
 
       </div> <!-- End Footer -->
     </div> <!-- End Content -->
-    
-      <script type="text/javascript" src="/javascripts/prettify.js"></script>
-    <script type="text/javascript">
-        window.onload = function(){
-            if (!document.getElementsByTagName) return;
-            var codes = document.getElementsByTagName("code");
-            for (var i=0; i < codes.length; i++) {
-                codes[i].setAttribute("class", "prettyprint");
-                codes[i].setAttribute("className", "prettyprint"); // for IE
-            }
-            prettyPrint();
-        }
-    
-    </script>
-
-
   </body>
 </html>
-
 
 
 

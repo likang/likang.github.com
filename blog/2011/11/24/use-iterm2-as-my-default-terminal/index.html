@@ -17,21 +17,46 @@ href="/blog/feed/atom" />
 
   </head>
   <body>
-    <div id="wrapper">
-      <div id="content">
+    <div id="page">
+      
+  <div id="header">
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/blog">Archive</a>
+    </li>
+    <li>
+      <a href="/blog/feed">Subscribe</a>
+    </li>
+    <li>
+      <a href="https://github.com/likang">Github</a>
+    </li>
+  </ul>
+  <h1>
+    <a href="/">东篱</a>
+  </h1>
+</div>
+<div id="pagestripe">
+  <div id="pageblock"></div>
+</div>
+
+
+      <div id="content" class="single">
         
 
-<div class="hentry">
-  <h3 class="entry-title">
+<div class="post">
+  <h2>
     <a href="/blog/2011/11/24/use-iterm2-as-my-default-terminal" rel="bookmark" title="Permanent Link to 使用 iTerm2 作为默认终端">使用 iTerm2 作为默认终端</a> 
-    <abbr> · 2011/11/24 · 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2011/11/24 · 
 
 
 <a href='/blog/category/mac'>Mac</a>
 
-</abbr> 
-
-  </h3>
+  </h4>
 
     
   <p>一直以来 Mac 默认的终端也蛮好用的，但是今天发现 SSH到远程服务器之后，vim无法正常的split分屏显示，让我很郁闷，于是就找到了iTerm2.</p>
@@ -104,14 +129,14 @@ href="/blog/feed/atom" />
 
 
 <div id="pagination">
- <p class="previous left">
+ <p class="alignleft">
    « <a href="/blog/2011/11/23/build-cx-oracle-for-python">cx_Oracle 编译安装及简单使用方法</a>
  </p>
- <p class="next right">
+ <p class="alignright">
    <a href="/blog/2011/11/29/made-another-hackintosh">又安装了一个黑苹果</a> »
  </p>
 </div>
-<div class="clear"></div>
+<div class="break"></div>
 
 
 <div id="disqus_thread"></div>
@@ -120,52 +145,32 @@ href="/blog/feed/atom" />
 </script>
 
       </div><!-- End Main Block -->
-      
-  <div id="sidebar">
-  <div class="widget">
-    <h1 id="branding">
-      <a href="/">东篱</a>
-    </h1>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="https://github.com/likang">Github</a></li>
-      <li><a href="/blog">Archive</a></li>
-      <li><a href="/blog/feed">Subscribe</a></li>
-  </nav>
-</div>
-
-
-      <div class="clear"></div><!-- End Sitebar -->
-      <div id="footer">
+      <div id="footer" class="single">
         
   <p id="credits">
-Powered by <a href="http://www.blogofile.com">Blogofile</a>. 
+Likang.me uses <a href="http://www.ulfpettersson.se/design/modern/">Modern</a> and powered by <a href="http://www.blogofile.com">Blogofile</a>. 
 <br>
 </p>
+
+<script type="text/javascript" src="/javascripts/prettify.js"></script>
+<script type="text/javascript">
+    window.onload = function(){
+        if (!document.getElementsByTagName) return;
+        var codes = document.getElementsByTagName("code");
+        for (var i=0; i < codes.length; i++) {
+            codes[i].setAttribute("class", "prettyprint");
+            codes[i].setAttribute("className", "prettyprint"); // for IE
+        }
+        prettyPrint();
+    }
+
+</script>
 
 
       </div> <!-- End Footer -->
     </div> <!-- End Content -->
-    
-      <script type="text/javascript" src="/javascripts/prettify.js"></script>
-    <script type="text/javascript">
-        window.onload = function(){
-            if (!document.getElementsByTagName) return;
-            var codes = document.getElementsByTagName("code");
-            for (var i=0; i < codes.length; i++) {
-                codes[i].setAttribute("class", "prettyprint");
-                codes[i].setAttribute("className", "prettyprint"); // for IE
-            }
-            prettyPrint();
-        }
-    
-    </script>
-
-
   </body>
 </html>
-
 
 
 

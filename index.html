@@ -17,21 +17,46 @@ href="/blog/feed/atom" />
 
   </head>
   <body>
-    <div id="wrapper">
-      <div id="content">
+    <div id="page">
+      
+  <div id="header">
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/blog">Archive</a>
+    </li>
+    <li>
+      <a href="/blog/feed">Subscribe</a>
+    </li>
+    <li>
+      <a href="https://github.com/likang">Github</a>
+    </li>
+  </ul>
+  <h1>
+    <a href="/">东篱</a>
+  </h1>
+</div>
+<div id="pagestripe">
+  <div id="pageblock"></div>
+</div>
+
+
+      <div id="content" class="single">
         
   
-<div class="hentry">
-  <h3 class="entry-title">
+<div class="post">
+  <h2>
     <a href="/blog/2012/04/13/calculate-character-width-in-python" rel="bookmark" title="Permanent Link to Python中计算字符宽度">Python中计算字符宽度</a> 
-    <abbr> · 2012/04/13 · 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2012/04/13 · 
 
 
 <a href='/blog/category/python'>Python</a>
 
-</abbr> 
-
-  </h3>
+  </h4>
 
     
   <p>最近在用python写一个CLI小程序，其中涉及到计算字符宽度，目标是以友好的方式将一个长字符串截取为等宽的片段。</p>
@@ -120,17 +145,17 @@ def get_width( o ):
 
 
   
-<div class="hentry">
-  <h3 class="entry-title">
+<div class="post">
+  <h2>
     <a href="/blog/2012/04/12/i-have-a-window" rel="bookmark" title="Permanent Link to 我有一个窗户">我有一个窗户</a> 
-    <abbr> · 2012/04/12 · 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2012/04/12 · 
 
 
 <a href='/blog/category/life'>Life</a>
 
-</abbr> 
-
-  </h3>
+  </h4>
 
     
   <p>我有一个窗户，早晨醒来，可以享受温暖的太阳；</p>
@@ -144,17 +169,17 @@ def get_width( o ):
 
 
   
-<div class="hentry">
-  <h3 class="entry-title">
+<div class="post">
+  <h2>
     <a href="/blog/2012/04/12/two-leaves" rel="bookmark" title="Permanent Link to 两片树叶">两片树叶</a> 
-    <abbr> · 2012/04/12 · 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2012/04/12 · 
 
 
 <a href='/blog/category/life'>Life</a>
 
-</abbr> 
-
-  </h3>
+  </h4>
 
     
   <p>有两片树叶，离的很近，但不在一枝上。</p>
@@ -173,17 +198,17 @@ def get_width( o ):
 
 
   
-<div class="hentry">
-  <h3 class="entry-title">
+<div class="post">
+  <h2>
     <a href="/blog/2012/02/12/lantern-festival-memories" rel="bookmark" title="Permanent Link to 元宵节忆旧">元宵节忆旧</a> 
-    <abbr> · 2012/02/12 · 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2012/02/12 · 
 
 
 <a href='/blog/category/life'>Life</a>
 
-</abbr> 
-
-  </h3>
+  </h4>
 
     
   <p>今年元宵节的前一天，老妈打来电话，让我自己煮点汤圆吃，我说我正有此打算。</p>
@@ -203,17 +228,17 @@ def get_width( o ):
 
 
   
-<div class="hentry">
-  <h3 class="entry-title">
+<div class="post">
+  <h2>
     <a href="/blog/2012/02/12/transplant-trees" rel="bookmark" title="Permanent Link to 春节移树">春节移树</a> 
-    <abbr> · 2012/02/12 · 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2012/02/12 · 
 
 
 <a href='/blog/category/life'>Life</a>
 
-</abbr> 
-
-  </h3>
+  </h4>
 
     
   <p>春节在家待的真是舒服，没有工作，没有网络，饭菜可口，睡眠充足:D 小侄子也1岁了，可以各种逗着玩。除此之外，如果能活动活动，那是最好不过了。</p>
@@ -241,52 +266,32 @@ def get_width( o ):
 
 
       </div><!-- End Main Block -->
-      
-  <div id="sidebar">
-  <div class="widget">
-    <h1 id="branding">
-      <a href="/">东篱</a>
-    </h1>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="https://github.com/likang">Github</a></li>
-      <li><a href="/blog">Archive</a></li>
-      <li><a href="/blog/feed">Subscribe</a></li>
-  </nav>
-</div>
-
-
-      <div class="clear"></div><!-- End Sitebar -->
-      <div id="footer">
+      <div id="footer" class="single">
         
   <p id="credits">
-Powered by <a href="http://www.blogofile.com">Blogofile</a>. 
+Likang.me uses <a href="http://www.ulfpettersson.se/design/modern/">Modern</a> and powered by <a href="http://www.blogofile.com">Blogofile</a>. 
 <br>
 </p>
+
+<script type="text/javascript" src="/javascripts/prettify.js"></script>
+<script type="text/javascript">
+    window.onload = function(){
+        if (!document.getElementsByTagName) return;
+        var codes = document.getElementsByTagName("code");
+        for (var i=0; i < codes.length; i++) {
+            codes[i].setAttribute("class", "prettyprint");
+            codes[i].setAttribute("className", "prettyprint"); // for IE
+        }
+        prettyPrint();
+    }
+
+</script>
 
 
       </div> <!-- End Footer -->
     </div> <!-- End Content -->
-    
-      <script type="text/javascript" src="/javascripts/prettify.js"></script>
-    <script type="text/javascript">
-        window.onload = function(){
-            if (!document.getElementsByTagName) return;
-            var codes = document.getElementsByTagName("code");
-            for (var i=0; i < codes.length; i++) {
-                codes[i].setAttribute("class", "prettyprint");
-                codes[i].setAttribute("className", "prettyprint"); // for IE
-            }
-            prettyPrint();
-        }
-    
-    </script>
-
-
   </body>
 </html>
-
 
 
 
