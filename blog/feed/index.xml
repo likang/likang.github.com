@@ -7,7 +7,7 @@
   <title type="text">东篱</title>
   <subtitle type="text">文字打败时间</subtitle>
 
-  <updated>2012-05-19T06:57:08Z</updated>
+  <updated>2012-05-19T09:08:55Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://likang.me/blog" />
@@ -217,13 +217,13 @@ def get_width( o ):
       <name></name>
       <uri>http://likang.me/blog</uri>
     </author>
-    <title type="html"><![CDATA[我一扇窗]]></title>
+    <title type="html"><![CDATA[我有一扇窗]]></title>
     <link rel="alternate" type="text/html" href="http://likang.me/blog/2012/04/12/i-have-a-window" />
     <id>http://likang.me/blog/2012/04/12/i-have-a-window</id>
     <updated>2012-04-12T23:56:09Z</updated>
     <published>2012-04-12T23:56:09Z</published>
     <category scheme="http://likang.me/blog" term="Life" />
-    <summary type="html"><![CDATA[我一扇窗]]></summary>
+    <summary type="html"><![CDATA[我有一扇窗]]></summary>
     <content type="html" xml:base="http://likang.me/blog/2012/04/12/i-have-a-window"><![CDATA[<p>我有一扇窗，早晨醒来，可以享受温暖的太阳；</p>
 <p>我有一扇窗，斜倚在窗口，可以看见夜晚的霓虹灯光；</p>
 <p>我有一扇窗，在这四月天，可以闻到桃花的清香；</p>
