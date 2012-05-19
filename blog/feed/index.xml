@@ -7,7 +7,7 @@
   <title type="text">东篱</title>
   <subtitle type="text">文字打败时间</subtitle>
 
-  <updated>2012-05-19T09:08:55Z</updated>
+  <updated>2012-05-19T12:13:52Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://likang.me/blog" />
@@ -23,8 +23,8 @@
     <id>http://likang.me/blog/2012/05/19/reflekt</id>
     <updated>2012-05-19T13:41:19Z</updated>
     <published>2012-05-19T13:41:19Z</published>
-    <category scheme="http://likang.me/blog" term="python" />
-    <category scheme="http://likang.me/blog" term="project" />
+    <category scheme="http://likang.me/blog" term="Python" />
+    <category scheme="http://likang.me/blog" term="Project" />
     <summary type="html"><![CDATA[Reflekt]]></summary>
     <content type="html" xml:base="http://likang.me/blog/2012/05/19/reflekt"><![CDATA[<p>公司之前有做过类似Q卡的项目，现在不做了，于是闲置下来很多机器，就是一般挂在电梯里或者便利店里的那种。于是团队决定拉回来几个放在办公室玩玩。</p>
 <p>机器有上下两个屏幕，下面的可触摸，系统是Ubuntu，我便想在这个上面可以玩点什么。想到之前在iOS上玩过一个叫<a href="http://itunes.apple.com/us/app/reflekt/id428836268?mt=8">Reflekt</a>的游戏，属于消除类，移动方块使得与镜面中的元素一致即可消除。而我们的机器有两个屏幕，正好可以当作镜面，于是我就想模拟一个出来放在上面玩玩。</p>
