@@ -7,12 +7,68 @@
   <title type="text">东篱</title>
   <subtitle type="text">文字打败时间</subtitle>
 
-  <updated>2012-04-15T12:59:42Z</updated>
+  <updated>2012-05-19T06:50:44Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://likang.me/blog" />
   <id>http://likang.me/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://likang.me/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://likang.me/blog</uri>
+    </author>
+    <title type="html"><![CDATA[Reflekt]]></title>
+    <link rel="alternate" type="text/html" href="http://likang.me/blog/2012/05/19/reflekt" />
+    <id>http://likang.me/blog/2012/05/19/reflekt</id>
+    <updated>2012-05-19T13:41:19Z</updated>
+    <published>2012-05-19T13:41:19Z</published>
+    <category scheme="http://likang.me/blog" term="python" />
+    <category scheme="http://likang.me/blog" term="project" />
+    <summary type="html"><![CDATA[Reflekt]]></summary>
+    <content type="html" xml:base="http://likang.me/blog/2012/05/19/reflekt"><![CDATA[<p>公司之前有做过类似Q卡的项目，现在不做了，于是闲置下来很多机器，就是一般挂在电梯里或者便利店里的那种。于是团队决定拉回来几个放在办公室玩玩。</p>
+<p>机器有上下两个屏幕，下面的可触摸，系统是Ubuntu，我便想在这个上面可以玩点什么。想到之前在iOS上玩过一个叫<a href="http://itunes.apple.com/us/app/reflekt/id428836268?mt=8">Reflekt</a>的游戏，属于消除类，移动方块使得与镜面中的元素一致即可消除。而我们的机器有两个屏幕，正好可以当作镜面，于是我就想模拟一个出来放在上面玩玩。</p>
+<p>写Linux上的游戏我自然想到pyGame，一个Python的2D游戏库，使用起来颇为简单，而且游戏本身也不复杂，所以实现起来还算容易。</p>
+<p>复杂的部分在于，游戏窗口一般无法使用多线程来实现多窗口，只能通过多进程的方式，于是我需要开启两个相同的进程，一个作为主窗口，处理输入，并将相应的命令传递个另外一个窗口。而处理用户输入与发送命令之间需要异步操作，因此主进程中要开一个单独的线程来发送命令。将主进程接收的命令并传递到发送线程，采用Python内置的Queue队列实现，于是一个小小的程序，因为要多一点点多进程的交互，变得稍显复杂了起来。大致框架如下</p>
+<pre><code> +----------------------------+         +-----------------------------+
+ |        Main Process        |         |       Mirror Process        |
+ +----------------------------+         +-----------------------------+
+ |     +----------------+     |         |                             |
+ |     |   User Input   |     |         |                             |
+ |     +-------+--------+     |         |                             |
+ |             |              |         |                             |
+ |             | Queue        |         |                             |
+ |             v              |         |                             |
+ |     +----------------+     |         |     +-----------------+     |
+ |     |                |     |         |     |                 |     |
+ |     |                |     | socket  |     |                 |     |
+ |     | Sender Thread  +-------------------&gt; | Receiver Thread |     |
+ |     |                |     |         |     |                 |     |
+ |     +----------------+     |         |     +-----------------+     |
+ +----------------------------+         +-----------------------------+
+</code></pre>
+<p>目前还不完善，接下来要实现自动识别游戏结束，加入无尽模式。放在<a href="https://github.com/likang/reflekt">Github</a>上，有兴趣可以瞧一瞧。</p>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://likang.me/blog</uri>
+    </author>
+    <title type="html"><![CDATA[电池技术需要一场革命]]></title>
+    <link rel="alternate" type="text/html" href="http://likang.me/blog/2012/05/15/battery-technology-revolution-required" />
+    <id>http://likang.me/blog/2012/05/15/battery-technology-revolution-required</id>
+    <updated>2012-05-15T10:03:14Z</updated>
+    <published>2012-05-15T10:03:14Z</published>
+    <category scheme="http://likang.me/blog" term="Tech" />
+    <summary type="html"><![CDATA[电池技术需要一场革命]]></summary>
+    <content type="html" xml:base="http://likang.me/blog/2012/05/15/battery-technology-revolution-required"><![CDATA[<p>上个礼拜,同事拿回来一台 The new iPad, 新搭载的Retina屏幕着实惊艳，翻阅书籍、杂志的感觉舒服的不得了，可美中不足的是，甚至可以说深深遗憾的是：仍然太重了。</p>
+<p>原因很简单：电池由上一版本的25Whr上升到了42.5Whr，容量足足提升了70%。实际上屏幕、处理器、主板等部件的重量和体积已经到达了合理的水平，而从iPad背部拆解图来看，3大块电池霸道的占据了绝大部分空间，有点惨不忍睹。</p>
+<p>大部分情况下iPad是最好的平板，这一点毫无疑问，但从一代以来就有的一个问题是，因为太重，不适合长时间手握，所以也就无法像Kindle那样随身携带，人们更多的是把iPad放在支架上，或者用身体的某个部位支撑着，才能长时间的使用，否则一定是累得手酸臂痛。</p>
+<p>问题不是现在才有，随着移动计算设备的流行，它们承载了过多的功能，用户对更强处理器、更清晰屏幕的需求导致设备耗电速度急速上升。早期手机的电量一般可用3-5天，现在最流行的iPhone/Android手机一般只能使用1天，尤其是出货量最大的Android，如果您再玩点游戏，可能连一天也支撑不了，这还是在电池容量翻一翻甚至翻两翻的情况下。</p>
+<p>试想如果电池可以做到轻薄容量大，会发生什么事呢？iPad只有目前的一半厚度，且重量跟一个大号手机差不多，我想这下没人不愿意在自己的包里腾出点空间给iPad了吧；手机充电一次可以使用起码一个月，背包客就不用发愁手机充电的事了。</p>
+<p>再想点别的，床头的台灯从此抛弃电线，随便把它拿到哪儿；甚至汽车也充电就跑，不用加油站了⋯⋯</p>
+<p>如此种种必将对现有的工业产品产生极大的影响，甚至可能催生出划时代的电子产品，称之为一场革命也并不为过。</p>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -161,17 +217,17 @@ def get_width( o ):
       <name></name>
       <uri>http://likang.me/blog</uri>
     </author>
-    <title type="html"><![CDATA[我有一个窗户]]></title>
+    <title type="html"><![CDATA[我一扇窗]]></title>
     <link rel="alternate" type="text/html" href="http://likang.me/blog/2012/04/12/i-have-a-window" />
     <id>http://likang.me/blog/2012/04/12/i-have-a-window</id>
     <updated>2012-04-12T23:56:09Z</updated>
     <published>2012-04-12T23:56:09Z</published>
     <category scheme="http://likang.me/blog" term="Life" />
-    <summary type="html"><![CDATA[我有一个窗户]]></summary>
-    <content type="html" xml:base="http://likang.me/blog/2012/04/12/i-have-a-window"><![CDATA[<p>我有一个窗户，早晨醒来，可以享受温暖的太阳；</p>
-<p>我有一个窗户，斜倚在窗口，可以看见夜晚的霓虹灯光；</p>
-<p>我有一个窗户，在这四月天，可以闻到桃花的清香；</p>
-<p>我有一个窗户，满载着世界，静静流淌。</p>]]></content>
+    <summary type="html"><![CDATA[我一扇窗]]></summary>
+    <content type="html" xml:base="http://likang.me/blog/2012/04/12/i-have-a-window"><![CDATA[<p>我有一扇窗，早晨醒来，可以享受温暖的太阳；</p>
+<p>我有一扇窗，斜倚在窗口，可以看见夜晚的霓虹灯光；</p>
+<p>我有一扇窗，在这四月天，可以闻到桃花的清香；</p>
+<p>我有一扇窗，满载着世界，静静流淌。</p>]]></content>
   </entry>
   <entry>
     <author>
@@ -279,49 +335,5 @@ def get_width( o ):
 <li>写几篇小小的童话故事贴在这里:D</li>
 <li>攒点钱，看世界。五月去澳洲，十月去欧洲。</li>
 </ul>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://likang.me/blog</uri>
-    </author>
-    <title type="html"><![CDATA[迁移到 blogofile]]></title>
-    <link rel="alternate" type="text/html" href="http://likang.me/blog/2012/01/05/move-to-blogofile" />
-    <id>http://likang.me/blog/2012/01/05/move-to-blogofile</id>
-    <updated>2012-01-05T17:01:08Z</updated>
-    <published>2012-01-05T17:01:08Z</published>
-    <category scheme="http://likang.me/blog" term="Tech" />
-    <summary type="html"><![CDATA[迁移到 blogofile]]></summary>
-    <content type="html" xml:base="http://likang.me/blog/2012/01/05/move-to-blogofile"><![CDATA[<p>Octopress 蛮好用的。但还是有几个原因让我迁移：</p>
-<ul>
-<li>Octopress有点重，我只是想要一个简简单单的静态文件博客，可以灵活的定制，不需要太多功能，Blogofile 足够简单和灵活。</li>
-<li>Blogofile是基于Python的，也就意味着对我来说它的插件和模板系统上手很快。事实上，Blogofile init之后，我立刻就把它的URL生成方式改成了Octopress的方式，即由文章的文件名来指定文章路径。</li>
-<li>Octopress的Ruby环境安装起来实在不方便，可能是我太笨。可Blogofile只需easy_install一下就OK了。</li>
-</ul>
-<p>当然迁移之后我对Blogofile做了一点改动：</p>
-<ul>
-<li>做了一个简单的主题</li>
-<li>支持部署到Github Pages</li>
-<li>URL生成方式完全根据文件名，如2011-12-25-new-post.markdown 将部署到 2011/12/25/new-post</li>
-<li>用 sh _new.sh 帮助生成符合标准的markdown文件</li>
-</ul>
-<p>Blogofile 默认没有对部署到Github Pages进行支持，我就想了一个笨方法来实现：将Blogofile生成的_site目录作为Git repository，由于Blogofile build的时候会首先完全清空_site目录，所以我写了一个脚本自动备份_site中的隐藏文件和文件夹，Blogofile build完成之后再将隐藏文件移动过去，是不是很笨。。。</p>
-<p>如果你对这个改动后的模板感兴趣，可以在<a href="https://github.com/likang/blogofile">这里</a>找到。</p>
-<p>总之对于现在这个样子的站点我很满意，换了喜欢的主题，换了更贴心的工具。</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://likang.me/blog</uri>
-    </author>
-    <title type="html"><![CDATA[本命年小红绳]]></title>
-    <link rel="alternate" type="text/html" href="http://likang.me/blog/2011/12/30/a-lucky-red-string" />
-    <id>http://likang.me/blog/2011/12/30/a-lucky-red-string</id>
-    <updated>2011-12-30T15:13:43Z</updated>
-    <published>2011-12-30T15:13:43Z</published>
-    <category scheme="http://likang.me/blog" term="Life" />
-    <summary type="html"><![CDATA[本命年小红绳]]></summary>
-    <content type="html" xml:base="http://likang.me/blog/2011/12/30/a-lucky-red-string"><![CDATA[<p>明年就是龙年，也就是我的本命年，按照传统，本命年应该多穿红色的衣服，不是求好运，而是规避厄运。我们家向来对此类传统不是特别感冒，所以我已经记不得12岁那年我有没有穿戴过红色的衣饰了。</p>
-<p>但是今天，一个远方的朋友给我寄来一根红色的手工编织手链，我立刻就戴上了，大小合适，感觉很好:D 虽我平时不戴任何首饰，但是这根绳子我打算起码会让它跟着我整个龙年。</p>]]></content>
   </entry>
 </feed>
