@@ -7,7 +7,7 @@
   <title type="text">东篱</title>
   <subtitle type="text">文字打败时间</subtitle>
 
-  <updated>2012-05-19T12:13:52Z</updated>
+  <updated>2012-06-04T02:47:40Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://likang.me/blog" />
@@ -23,8 +23,8 @@
     <id>http://likang.me/blog/2012/05/19/reflekt</id>
     <updated>2012-05-19T13:41:19Z</updated>
     <published>2012-05-19T13:41:19Z</published>
-    <category scheme="http://likang.me/blog" term="Python" />
-    <category scheme="http://likang.me/blog" term="Project" />
+    <category scheme="http://likang.me/blog" term="python" />
+    <category scheme="http://likang.me/blog" term="project" />
     <summary type="html"><![CDATA[Reflekt]]></summary>
     <content type="html" xml:base="http://likang.me/blog/2012/05/19/reflekt"><![CDATA[<p>公司之前有做过类似Q卡的项目，现在不做了，于是闲置下来很多机器，就是一般挂在电梯里或者便利店里的那种。于是团队决定拉回来几个放在办公室玩玩。</p>
 <p>机器有上下两个屏幕，下面的可触摸，系统是Ubuntu，我便想在这个上面可以玩点什么。想到之前在iOS上玩过一个叫<a href="http://itunes.apple.com/us/app/reflekt/id428836268?mt=8">Reflekt</a>的游戏，属于消除类，移动方块使得与镜面中的元素一致即可消除。而我们的机器有两个屏幕，正好可以当作镜面，于是我就想模拟一个出来放在上面玩玩。</p>
@@ -59,7 +59,7 @@
     <id>http://likang.me/blog/2012/05/15/battery-technology-revolution-required</id>
     <updated>2012-05-15T10:03:14Z</updated>
     <published>2012-05-15T10:03:14Z</published>
-    <category scheme="http://likang.me/blog" term="Tech" />
+    <category scheme="http://likang.me/blog" term="tech" />
     <summary type="html"><![CDATA[电池技术需要一场革命]]></summary>
     <content type="html" xml:base="http://likang.me/blog/2012/05/15/battery-technology-revolution-required"><![CDATA[<p>上个礼拜,同事拿回来一台 The new iPad, 新搭载的Retina屏幕着实惊艳，翻阅书籍、杂志的感觉舒服的不得了，可美中不足的是，甚至可以说深深遗憾的是：仍然太重了。</p>
 <p>原因很简单：电池由上一版本的25Whr上升到了42.5Whr，容量足足提升了70%。实际上屏幕、处理器、主板等部件的重量和体积已经到达了合理的水平，而从iPad背部拆解图来看，3大块电池霸道的占据了绝大部分空间，有点惨不忍睹。</p>
@@ -79,7 +79,7 @@
     <id>http://likang.me/blog/2012/04/15/buying-flower</id>
     <updated>2012-04-15T16:54:47Z</updated>
     <published>2012-04-15T16:54:47Z</published>
-    <category scheme="http://likang.me/blog" term="Life" />
+    <category scheme="http://likang.me/blog" term="life" />
     <summary type="html"><![CDATA[买花记]]></summary>
     <content type="html" xml:base="http://likang.me/blog/2012/04/15/buying-flower"><![CDATA[<p>我在肇家浜路上径直的走着，目的地是一个盆栽花店，却不知道应该在哪个路口左拐。</p>
 <p>两个星期前，我跟朋友一起去过这家店，当时他们要帮另一个朋友买盆花，说一定要来这里买。到了之后，我立即觉得这确实是一个好地方。</p>
@@ -112,8 +112,8 @@
     <id>http://likang.me/blog/2012/04/14/puff-girl</id>
     <updated>2012-04-14T20:43:42Z</updated>
     <published>2012-04-14T20:43:42Z</published>
-    <category scheme="http://likang.me/blog" term="Life" />
-    <category scheme="http://likang.me/blog" term="Fairy Tale" />
+    <category scheme="http://likang.me/blog" term="life" />
+    <category scheme="http://likang.me/blog" term="fairy tale" />
     <summary type="html"><![CDATA[泡芙女孩]]></summary>
     <content type="html" xml:base="http://likang.me/blog/2012/04/14/puff-girl"><![CDATA[<p>我听说从前有个男孩，很喜欢吃泡芙，有一次调皮，在睡前小心翼翼的只把泡芙里的奶油吃掉，留下一个壳子，第二天竟然发现泡芙里有一个小女孩，便问她叫什么名字，女孩说不能说出自己的名字，一旦说出就会变回原型，不能待在这里了。男孩问会变成什么，女孩答这也不能说。</p>
 <p>就这样男孩有了玩伴，他让妈妈把每件上衣都缝一个口袋在前面，这样把女孩放在里面，可以一起吹风。男孩带着女孩跑遍了城市的每个角落，每到一个地方，他们总是开心的说笑，所有人都觉得男孩奇怪，因为他们只看到他一个人。</p>
@@ -130,7 +130,7 @@
     <id>http://likang.me/blog/2012/04/13/calculate-character-width-in-python</id>
     <updated>2012-04-13T01:43:12Z</updated>
     <published>2012-04-13T01:43:12Z</published>
-    <category scheme="http://likang.me/blog" term="Python" />
+    <category scheme="http://likang.me/blog" term="python" />
     <summary type="html"><![CDATA[Python中计算字符宽度]]></summary>
     <content type="html" xml:base="http://likang.me/blog/2012/04/13/calculate-character-width-in-python"><![CDATA[<p>最近在用python写一个CLI小程序，其中涉及到计算字符宽度，目标是以友好的方式将一个长字符串截取为等宽的片段。</p>
 <p>对于unicode字符，python的len函数可以准确的计算其中所包含的字符个数，但是个数并不代表宽度，如：</p>
@@ -222,7 +222,7 @@ def get_width( o ):
     <id>http://likang.me/blog/2012/04/12/i-have-a-window</id>
     <updated>2012-04-12T23:56:09Z</updated>
     <published>2012-04-12T23:56:09Z</published>
-    <category scheme="http://likang.me/blog" term="Life" />
+    <category scheme="http://likang.me/blog" term="life" />
     <summary type="html"><![CDATA[我有一扇窗]]></summary>
     <content type="html" xml:base="http://likang.me/blog/2012/04/12/i-have-a-window"><![CDATA[<p>我有一扇窗，早晨醒来，可以享受温暖的太阳；</p>
 <p>我有一扇窗，斜倚在窗口，可以看见夜晚的霓虹灯光；</p>
@@ -239,7 +239,7 @@ def get_width( o ):
     <id>http://likang.me/blog/2012/04/12/two-leaves</id>
     <updated>2012-04-12T23:30:56Z</updated>
     <published>2012-04-12T23:30:56Z</published>
-    <category scheme="http://likang.me/blog" term="Life" />
+    <category scheme="http://likang.me/blog" term="life" />
     <summary type="html"><![CDATA[两片树叶]]></summary>
     <content type="html" xml:base="http://likang.me/blog/2012/04/12/two-leaves"><![CDATA[<p>有两片树叶，离的很近，但不在一枝上。</p>
 <p>刚发芽的时候，都对这个世界充满了好奇，微风吹过，细雨滑过，阳光，均匀的撒过。</p>
@@ -261,7 +261,7 @@ def get_width( o ):
     <id>http://likang.me/blog/2012/02/12/lantern-festival-memories</id>
     <updated>2012-02-12T14:04:23Z</updated>
     <published>2012-02-12T14:04:23Z</published>
-    <category scheme="http://likang.me/blog" term="Life" />
+    <category scheme="http://likang.me/blog" term="life" />
     <summary type="html"><![CDATA[元宵节忆旧]]></summary>
     <content type="html" xml:base="http://likang.me/blog/2012/02/12/lantern-festival-memories"><![CDATA[<p>今年元宵节的前一天，老妈打来电话，让我自己煮点汤圆吃，我说我正有此打算。</p>
 <p>于是下班跑到超市买了汤圆，回家用电饭锅煮了吃，很久没吃，还挺好吃的。其实不在老家的年份里，我对元宵节一点也不敏感，并没有把它当作一个节日。</p>
@@ -284,7 +284,7 @@ def get_width( o ):
     <id>http://likang.me/blog/2012/02/12/transplant-trees</id>
     <updated>2012-02-12T12:38:46Z</updated>
     <published>2012-02-12T12:38:46Z</published>
-    <category scheme="http://likang.me/blog" term="Life" />
+    <category scheme="http://likang.me/blog" term="life" />
     <summary type="html"><![CDATA[春节移树]]></summary>
     <content type="html" xml:base="http://likang.me/blog/2012/02/12/transplant-trees"><![CDATA[<p>春节在家待的真是舒服，没有工作，没有网络，饭菜可口，睡眠充足:D 小侄子也1岁了，可以各种逗着玩。除此之外，如果能活动活动，那是最好不过了。</p>
 <p>刚巧老爸说今年要把几棵树移植一下，于是我毫不犹豫的加入到社会主义建设的热潮中。</p>
@@ -306,7 +306,7 @@ def get_width( o ):
     <id>http://likang.me/blog/2012/01/14/personal-review-of-2011</id>
     <updated>2012-01-14T21:18:03Z</updated>
     <published>2012-01-14T21:18:03Z</published>
-    <category scheme="http://likang.me/blog" term="Life" />
+    <category scheme="http://likang.me/blog" term="life" />
     <summary type="html"><![CDATA[2011 个人总结]]></summary>
     <content type="html" xml:base="http://likang.me/blog/2012/01/14/personal-review-of-2011"><![CDATA[<p>马上要回家过年了，意味着又在外面漂了一年。</p>
 <p>回顾这一年，似乎是一个平常的年份。仍然在上海，仍然在同一家公司，仍然一个人，但改变已发生。</p>
