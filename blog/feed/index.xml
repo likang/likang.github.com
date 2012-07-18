@@ -7,12 +7,108 @@
   <title type="text">东篱</title>
   <subtitle type="text">文字打败时间</subtitle>
 
-  <updated>2012-07-14T13:33:21Z</updated>
+  <updated>2012-07-18T15:24:34Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://likang.me/blog" />
   <id>http://likang.me/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://likang.me/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://likang.me/blog</uri>
+    </author>
+    <title type="html"><![CDATA[品尝 Jelly Bean]]></title>
+    <link rel="alternate" type="text/html" href="http://likang.me/blog/2012/07/18/taste-jelly-bean" />
+    <id>http://likang.me/blog/2012/07/18/taste-jelly-bean</id>
+    <updated>2012-07-18T21:54:02Z</updated>
+    <published>2012-07-18T21:54:02Z</published>
+    <category scheme="http://likang.me/blog" term="android" />
+    <category scheme="http://likang.me/blog" term="tech" />
+    <summary type="html"><![CDATA[品尝 Jelly Bean]]></summary>
+    <content type="html" xml:base="http://likang.me/blog/2012/07/18/taste-jelly-bean"><![CDATA[<p>今早我的 Galaxy Nexus 收到 OTA 更新通知，对于懒得刷机的我来说是个意外的惊喜。</p>
+<p>触屏滑动体验果然如<a href="http://www.android.com/about/jelly-bean/">官方所说</a>，有了极大的改进，摆脱了之前苦涩、跳动、突兀的滑动触感。在我看来仅仅是这一项，足以使 Jelly Bean 成为 Android 系统发展史中的一个里程碑。</p>
+<p>我个人迟迟不买 Android 手机的一个很大原因就是体验了很多 Android 设备后，再与 iOS 相比，始终觉得 Android 无法感知我的触控意图。得知 Jelly Bean 对此有显著的优化提升后，我才选择了最可能先升级的 Galaxy Nexus，希望能弥补之前的挫败感，结果没有令我失望。</p>
+<p>整体上 Android 与 iOS 的差距仍然巨大，使用两个星期之后，我只找到了寥寥几个高品质应用，市场上的应用多属于粗制滥造，即使是大公司出品，Android 版本与 iOS 版本相比，质量也有明显差距。</p>
+<p>当然 Android 也不是全无优点，由于开放，使得第三方输入法、文件传输等均比较方便，Android 4.0 之后更是开放了网络权限，无需 Root 权限也可以使用 OpenVPN，这对于国内用户来说非常方便。</p>
+<p>从技术上将，"Project Butter" 的成功也使我们对 Android 之后的技术升级之路有了信心。Android 之前的版本升级给人的感觉是技术功底不深，对软硬件的结合工作做的一直不是很到位，希望 Android 之后的版本能有更多的突破。</p>]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://likang.me/blog</uri>
+    </author>
+    <title type="html"><![CDATA[隐藏滚动条]]></title>
+    <link rel="alternate" type="text/html" href="http://likang.me/blog/2012/07/17/hide-browser-scrollbar" />
+    <id>http://likang.me/blog/2012/07/17/hide-browser-scrollbar</id>
+    <updated>2012-07-17T23:56:56Z</updated>
+    <published>2012-07-17T23:56:56Z</published>
+    <category scheme="http://likang.me/blog" term="tech" />
+    <category scheme="http://likang.me/blog" term="front end" />
+    <summary type="html"><![CDATA[隐藏滚动条]]></summary>
+    <content type="html" xml:base="http://likang.me/blog/2012/07/17/hide-browser-scrollbar"><![CDATA[<p>与 OSX Lion 原生的滚动条相比，Firefox 以及Windows下的滚动条就显得惨不忍睹了，有时我们想让它干脆不显示。W3C有关滚动条方面的标准几乎是没有，而且不是所有浏览器都能对滚动条进行自定义，我们只能另辟蹊径。</p>
+<p>虽然说是隐藏，但是滚动功能还是要有的，否则 overflow: hidden 就可以了。在此我们采取的是用层遮罩的方式来实现。</p>
+<p>首先要知道滚动条的宽度。由于JS中并没有直接获取滚动条宽度的方法，我们再耍一个小技巧：先生成一个不显示滚动条的元素块，计算其宽度，然后让其显示滚动条，则当前宽度跟原宽度的差值即是滚动条的宽度。感谢 <a href="http://www.alexandre-gomes.com/?p=115">alexandre</a> 提供的跨浏览器的解决方案：</p>
+<pre><code>function getScrollBarWidth () {  
+    var inner = document.createElement('p');  
+    inner.style.width = "100%";  
+    inner.style.height = "200px";
+
+    var outer = document.createElement('div');  
+    outer.style.position = "absolute";  
+    outer.style.top = "0px";  
+    outer.style.left = "0px";  
+    outer.style.visibility = "hidden";  
+    outer.style.width = "200px";  
+    outer.style.height = "150px";  
+    outer.style.overflow = "hidden";  
+    outer.appendChild (inner);
+
+    document.body.appendChild (outer);  
+    var w1 = inner.offsetWidth;  
+    outer.style.overflow = 'scroll';  
+    var w2 = inner.offsetWidth;  
+    if (w1 == w2) w2 = outer.clientWidth;
+
+    document.body.removeChild (outer);
+
+    return (w1 - w2);  
+};
+</code></pre>
+<p>拿到滚动条宽度后，我们利用外部块级元素的overflow: hidden;属性将内部元素超出的部分隐藏掉。可使用margin或者手动调整内部元素宽度的方式来改变内部元素滚动条相对于外部元素的位置。</p>
+<p>需要注意的是，OSX Lion Webkit内核的滚动条是悬浮在文本框之上的，因此宽度是零。好在我们可以通过设置CSS伪类的方式来达到目的。</p>
+<pre><code>&lt;head&gt;
+    &lt;style type="text/css"&gt;
+        #mask {
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+        }
+        #wrap {
+            width: 100%;
+            height: 100%;
+            background-color: #D8D7CF;
+            overflow-y: scroll;
+        }
+        #wrap::-webkit-scrollbar, #wrap::scrollbar {
+            width: 0;
+            height: 0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="mask"&gt;
+        &lt;div id="wrap"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script type="text/javascript"&gt;
+        document.getElementById("wrap").style.marginLeft 
+            = getScrollBarWidth() + "px"
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<p>大功告成。原生的滚动条不见了，通过监听元素的 scroll 事件我们可以自定义的各种样式的滚动条。</p>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -268,50 +364,5 @@ def get_width( o ):
 <p>大风又起。它纵身一跃，翻转在忽左忽右的风中……</p>
 <p>树上的另一片借着风向转身，努力搜寻着地面，“看见你了……”，可惜地上的它听不到。</p>
 <p>一个午后，“刚才你在空中真美”一片对另一片说。</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://likang.me/blog</uri>
-    </author>
-    <title type="html"><![CDATA[元宵节忆旧]]></title>
-    <link rel="alternate" type="text/html" href="http://likang.me/blog/2012/02/12/lantern-festival-memories" />
-    <id>http://likang.me/blog/2012/02/12/lantern-festival-memories</id>
-    <updated>2012-02-12T14:04:23Z</updated>
-    <published>2012-02-12T14:04:23Z</published>
-    <category scheme="http://likang.me/blog" term="life" />
-    <summary type="html"><![CDATA[元宵节忆旧]]></summary>
-    <content type="html" xml:base="http://likang.me/blog/2012/02/12/lantern-festival-memories"><![CDATA[<p>今年元宵节的前一天，老妈打来电话，让我自己煮点汤圆吃，我说我正有此打算。</p>
-<p>于是下班跑到超市买了汤圆，回家用电饭锅煮了吃，很久没吃，还挺好吃的。其实不在老家的年份里，我对元宵节一点也不敏感，并没有把它当作一个节日。</p>
-<p>去年是在朋友家里蹭的元宵吃，小两口把晚饭弄的挺丰富，我也一点没客气，吃的汤圆最多。记得真正第一次吃元宵是在大一，我们班的助理辅导员，凯，邀请我去他们宿舍吃汤圆，大家都没有煮汤圆的经验，只有几个人依稀记得汤圆浮起来就算熟了……好在最后大家都分到了汤圆，围着客厅的小桌子大叫好吃。</p>
-<p>这位学长有诸多传奇故事，据说文采非凡，高中便出过散文集，大学时还把一个远在巴黎的女孩子追到……当时我对这些八卦都不感兴趣，但他谈吐文雅，机智幽默给我留下了很深的印象，不知道以后还能不能再见到一面。后来有一次又去他的宿舍，好像是去借U盘，他顺便在U盘里拷贝了些他推荐的东西，有很多，我只记得其中有一个.mht文件，名为《邪童正史》，我印象深刻，只可惜初入大学时对读书不感兴趣，现在都没有完整看过，也许我应该哪天翻出来看一看。</p>
-<p>前面说到真正第一次吃汤圆是在大一，那之前元宵节我都干嘛去了……其实我们老家正月十五没有吃汤圆的习惯，我很少看到有卖汤圆的，我们自己也不做汤圆，而是做面灯。</p>
-<p>面灯就是用面蒸出一个中空的小容器，类似仰着放的窝窝头，但是比窝窝头中间留的空间大，而且底是平的，不是圆的。蒸出后中间用一根裹着棉花的火柴插在中间作为灯芯，然后面灯里放入豆油或者猪油，这样就可以像蜡烛一样点燃啦，而且比蜡烛燃烧的时间长。普通的面灯只是在周围捏上花边，有一种特别的面灯会在面灯上盘一个龙，在龙嘴里放入一枚硬币，然后把它点燃后放在存放粮食的房间，用以祈求丰收。如果谁家有人去世，邻居还会送点面灯过去以示礼节。</p>
-<p>大人们做好面灯后，等到天黑，小朋友们就可以每人拿着一盏面灯出去溜达了，大人们也都会出来聊天，有家里稍微富裕、又有还不能到处溜达的小孩子的，就会拎个电子的花灯出来给自家小孩子玩，甚是让人羡慕。</p>
-<p>拿到花灯后，有的小朋友会别出心裁，在面灯外做点装饰，比如我:D  那个时候没什么材料，基本是在大人们喝酒用下来的空纸盒子上做文章，比如捥成一个花形啊、周围戳出小孔组成图案啊之类的……小时候很喜欢做这些小手工，后来我不做的年头，看到有小朋友做的更好看。</p>
-<p>等到面灯燃烬了，把灯芯拔掉就可以直接吃了。由于用火烤过，还有点现在烧烤里烤馒头的味道，又有油在上面，所以一般都吃的特香。吃完面灯，月光还正亮，小朋友们就开始疯玩了，成群结队的，玩打架，玩捉迷藏或者干脆就是疯跑，总会弄到很晚才回家。</p>
-<p>只可惜现在过节的味儿越来越淡，汤圆是吃上了，童年的那些趣事再也不会出现。</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://likang.me/blog</uri>
-    </author>
-    <title type="html"><![CDATA[春节移树]]></title>
-    <link rel="alternate" type="text/html" href="http://likang.me/blog/2012/02/12/transplant-trees" />
-    <id>http://likang.me/blog/2012/02/12/transplant-trees</id>
-    <updated>2012-02-12T12:38:46Z</updated>
-    <published>2012-02-12T12:38:46Z</published>
-    <category scheme="http://likang.me/blog" term="life" />
-    <summary type="html"><![CDATA[春节移树]]></summary>
-    <content type="html" xml:base="http://likang.me/blog/2012/02/12/transplant-trees"><![CDATA[<p>春节在家待的真是舒服，没有工作，没有网络，饭菜可口，睡眠充足:D 小侄子也1岁了，可以各种逗着玩。除此之外，如果能活动活动，那是最好不过了。</p>
-<p>刚巧老爸说今年要把几棵树移植一下，于是我毫不犹豫的加入到社会主义建设的热潮中。</p>
-<p>首先要把树挖出来。我们没有神奇的挖树机，只能用铁锹、钢镐来手工操作。由于这批树是两三年前栽的，已经不是小树苗了，所以树根已经扎的比较深、广，我们从树干周围40厘米处用铁锹将土铲出来，留下比较大的树根，然后用钢镐清理树根。我发现镐真是一个设计水平很高的工具，非常简单，却很实用。镐两头的形状差不多，只是角度不一样，却分别能完美胜任完全不同的任务，厉害！将底下树根铲断后，只需一推，树便缓缓倒下了，倒下时要注意树梢，避免把树梢折断。</p>
-<p>接着清理树干，将分叉的树枝砍掉。分叉的树枝不仅影响树的向上生长，而且会蒸发过多水分，降低移植的树的存活率。这个工作简单，用砍刀削掉主树干以外的树枝就好。我们几乎没有留下其他的树枝，只在树梢旁边留下两三个分枝，乡亲们都说留的树枝太少了，但我爸坚持这样做，理由是有利于存活，俺木有经验，木有发言权，只能过段时间让事实来说话了。</p>
-<p>然后在目标区域选址并挖坑。选址很重要，要尽量让树能接受到阳光的照射，并且旁边没有大树影响，俗话说大树底下不长草嘛。这个工作提不提前做都行，挖出来的树放个一两天也没有任何生命危险。</p>
-<p>再把树运过去并立起来。这个工作看似简单，实则是最耗力的工作。把生长了两三年的树立起来实在不是两三个人就能完成的任务。在找乡亲帮忙之前，我们一家四口遇到了颇多挫折=.= 看似仅仅粗了一点点的树，却尝试多次都始终无法像旁边一个稍微细一点的树一样立起来，让我们颇为郁闷。后来想想体积公式 V=πr^2 体积与半径是成平方关系的，我就释然了。。。</p>
-<p>最后是埋土并浇水。及时浇水非常重要，新移植的树由于之前的根都被砍断了，而且也换了新环境，因此亟需发新根。浇水后由于底下的土已经软化了，能方便的把树扶正。我们移植树的那两天正好分别遇上西南和东北强风，因此大部分树在第二天都歪了，好在浇水时能把它们扶正。</p>
-<p>老爸说移植后的树起码两年内无法生长，第一年保命，第二年适应。想想社会也是这个样子，上个世纪的诸多运动，相当于把社会的根砍断了，再想恢复发展，则需要很长的时间，不是一年两年，恐怕要按世纪来算了。</p>
-<p>就这样几棵树折腾了我们三天时间，最后我让老爸老妈算算花这么大力气来折腾这些树，最后能有多少回报。他们说一颗树长十年，能卖个两三百块钱，平均一年也就二三十块钱。我听后哈哈大笑，费了这么多力气和时间，还不如随便找点别的活干，轻轻松松也比这回报高。老妈笑着说，老农民就这样，宁愿多花点力气，也不愿浪费一点点土地资源。</p>]]></content>
   </entry>
 </feed>

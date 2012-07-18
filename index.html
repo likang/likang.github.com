@@ -30,6 +30,116 @@
   
 <div class="post">
   <h2>
+    <a href="/blog/2012/07/18/taste-jelly-bean" rel="bookmark" title="Permanent Link to 品尝 Jelly Bean">品尝 Jelly Bean</a> 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2012/07/18 · 
+
+
+<a href='/blog/category/android'>android</a> · <a href='/blog/category/tech'>tech</a>
+
+  </h4>
+
+    
+  <p>今早我的 Galaxy Nexus 收到 OTA 更新通知，对于懒得刷机的我来说是个意外的惊喜。</p>
+<p>触屏滑动体验果然如<a href="http://www.android.com/about/jelly-bean/">官方所说</a>，有了极大的改进，摆脱了之前苦涩、跳动、突兀的滑动触感。在我看来仅仅是这一项，足以使 Jelly Bean 成为 Android 系统发展史中的一个里程碑。</p>
+<p>我个人迟迟不买 Android 手机的一个很大原因就是体验了很多 Android 设备后，再与 iOS 相比，始终觉得 Android 无法感知我的触控意图。得知 Jelly Bean 对此有显著的优化提升后，我才选择了最可能先升级的 Galaxy Nexus，希望能弥补之前的挫败感，结果没有令我失望。</p>
+<p>整体上 Android 与 iOS 的差距仍然巨大，使用两个星期之后，我只找到了寥寥几个高品质应用，市场上的应用多属于粗制滥造，即使是大公司出品，Android 版本与 iOS 版本相比，质量也有明显差距。</p>
+<p>当然 Android 也不是全无优点，由于开放，使得第三方输入法、文件传输等均比较方便，Android 4.0 之后更是开放了网络权限，无需 Root 权限也可以使用 OpenVPN，这对于国内用户来说非常方便。</p>
+<p>从技术上将，"Project Butter" 的成功也使我们对 Android 之后的技术升级之路有了信心。Android 之前的版本升级给人的感觉是技术功底不深，对软硬件的结合工作做的一直不是很到位，希望 Android 之后的版本能有更多的突破。</p>
+
+
+    <div class="separator"></div>
+</div>
+
+
+
+  
+<div class="post">
+  <h2>
+    <a href="/blog/2012/07/17/hide-browser-scrollbar" rel="bookmark" title="Permanent Link to 隐藏滚动条">隐藏滚动条</a> 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2012/07/17 · 
+
+
+<a href='/blog/category/tech'>tech</a> · <a href='/blog/category/front-end'>front end</a>
+
+  </h4>
+
+    
+  <p>与 OSX Lion 原生的滚动条相比，Firefox 以及Windows下的滚动条就显得惨不忍睹了，有时我们想让它干脆不显示。W3C有关滚动条方面的标准几乎是没有，而且不是所有浏览器都能对滚动条进行自定义，我们只能另辟蹊径。</p>
+<p>虽然说是隐藏，但是滚动功能还是要有的，否则 overflow: hidden 就可以了。在此我们采取的是用层遮罩的方式来实现。</p>
+<p>首先要知道滚动条的宽度。由于JS中并没有直接获取滚动条宽度的方法，我们再耍一个小技巧：先生成一个不显示滚动条的元素块，计算其宽度，然后让其显示滚动条，则当前宽度跟原宽度的差值即是滚动条的宽度。感谢 <a href="http://www.alexandre-gomes.com/?p=115">alexandre</a> 提供的跨浏览器的解决方案：</p>
+<pre><code>function getScrollBarWidth () {  
+    var inner = document.createElement('p');  
+    inner.style.width = "100%";  
+    inner.style.height = "200px";
+
+    var outer = document.createElement('div');  
+    outer.style.position = "absolute";  
+    outer.style.top = "0px";  
+    outer.style.left = "0px";  
+    outer.style.visibility = "hidden";  
+    outer.style.width = "200px";  
+    outer.style.height = "150px";  
+    outer.style.overflow = "hidden";  
+    outer.appendChild (inner);
+
+    document.body.appendChild (outer);  
+    var w1 = inner.offsetWidth;  
+    outer.style.overflow = 'scroll';  
+    var w2 = inner.offsetWidth;  
+    if (w1 == w2) w2 = outer.clientWidth;
+
+    document.body.removeChild (outer);
+
+    return (w1 - w2);  
+};
+</code></pre>
+<p>拿到滚动条宽度后，我们利用外部块级元素的overflow: hidden;属性将内部元素超出的部分隐藏掉。可使用margin或者手动调整内部元素宽度的方式来改变内部元素滚动条相对于外部元素的位置。</p>
+<p>需要注意的是，OSX Lion Webkit内核的滚动条是悬浮在文本框之上的，因此宽度是零。好在我们可以通过设置CSS伪类的方式来达到目的。</p>
+<pre><code>&lt;head&gt;
+    &lt;style type="text/css"&gt;
+        #mask {
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+        }
+        #wrap {
+            width: 100%;
+            height: 100%;
+            background-color: #D8D7CF;
+            overflow-y: scroll;
+        }
+        #wrap::-webkit-scrollbar, #wrap::scrollbar {
+            width: 0;
+            height: 0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="mask"&gt;
+        &lt;div id="wrap"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script type="text/javascript"&gt;
+        document.getElementById("wrap").style.marginLeft 
+            = getScrollBarWidth() + "px"
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<p>大功告成。原生的滚动条不见了，通过监听元素的 scroll 事件我们可以自定义的各种样式的滚动条。</p>
+
+
+    <div class="separator"></div>
+</div>
+
+
+
+  
+<div class="post">
+  <h2>
     <a href="/blog/2012/06/11/morse-im" rel="bookmark" title="Permanent Link to Morse IM">Morse IM</a> 
   </h2>
   <h4 style="margin-top: 0px;">
@@ -117,72 +227,6 @@
 <p>试想如果电池可以做到轻薄容量大，会发生什么事呢？iPad只有目前的一半厚度，且重量跟一个大号手机差不多，我想这下没人不愿意在自己的包里腾出点空间给iPad了吧；手机充电一次可以使用起码一个月，背包客就不用发愁手机充电的事了。</p>
 <p>再想点别的，床头的台灯从此抛弃电线，随便把它拿到哪儿；甚至汽车也充电就跑，不用加油站了⋯⋯</p>
 <p>如此种种必将对现有的工业产品产生极大的影响，甚至可能催生出划时代的电子产品，称之为一场革命也并不为过。</p>
-
-
-    <div class="separator"></div>
-</div>
-
-
-
-  
-<div class="post">
-  <h2>
-    <a href="/blog/2012/04/15/buying-flower" rel="bookmark" title="Permanent Link to 买花记">买花记</a> 
-  </h2>
-  <h4 style="margin-top: 0px;">
-    2012/04/15 · 
-
-
-<a href='/blog/category/life'>life</a>
-
-  </h4>
-
-    
-  <p>我在肇家浜路上径直的走着，目的地是一个盆栽花店，却不知道应该在哪个路口左拐。</p>
-<p>两个星期前，我跟朋友一起去过这家店，当时他们要帮另一个朋友买盆花，说一定要来这里买。到了之后，我立即觉得这确实是一个好地方。</p>
-<p>想给朋友打电话问是在哪条路，结果是关机，我便继续往前走，凭感觉在陕西南路拐了进去。</p>
-<p>这条路有市中心街区特有的生气勃勃，不宽的马路两旁散着有些年头的大树，贴着行人道的，时而是一家特色衣店，时而是一条老弄堂，冷不丁的，一扇黑色的大门突然向内打开，一辆车子缓缓挤出来。打扮入时的上海老太迈着铿锵的步子，拎着大大小小的袋子挤上公交车；衣装笔挺的中年大叔，行色匆匆的迎面冲来；自信时尚的情侣则面无表情，仿佛模特走在T台上；三三两两的老外，有的驻足在画廊前盯着橱窗里的展品，有的听着音乐绕街慢跑。</p>
-<p>前面出现一抹绿，应该是到了，看来没有走错路。店门口摆着几盆不同的花，左右两边挂着吊兰，远远望去，像是一道拱门。门很窄，里面是露天的，围墙围出一块十来平米的地方，应该是由房子的后院改造而来。地上湿漉漉的，摆满了大大小小的盆栽，有的放在架子上，有的放在生锈了的旧式铁架椅子上，更多的是直接摆在地上，留出一个勉强能站开两个人宽的小道。空气中弥漫着各种花香混合的味道，淡淡的，混合着泥土的湿气，很提神。</p>
-<p>我进去时老板正在整理地上的一盆花，我冲老板微笑，点头致意，老板笑着停顿了一下，说：“你是昨天那个吗？”我说：“不是，不过之前跟朋友来过一次。”我还没想好要买什么，便挤到里面，一个个的看过来。</p>
-<p>老板是个中年大叔，瘦瘦的，说话声音不高，语速比较快，不太笑，但笑起来很真实，奇怪的是我觉得他跟王小波长得有点像。就像朋友所说，看的出来他是爱花的人，这么多花他都养的很好，而且对每种花都很了解。上次我来的时候他手里拿着烟，烟味把所有花香都掩盖了，而我却一反常态的没有任何厌恶的感觉。</p>
-<p>“我从来没养过花，第一次养，很怕给养死了。”我跟老板说。</p>
-<p>“你试下这个，这个很好养的……”他给我指了指拐角处的一个迷你的小盆栽。</p>
-<p>“我想养在阳台上，这个小了点……这个不错，是什么花？”我指着一排三盆开的花小巧玲珑的。</p>
-<p>“这是四季海棠，一年四季都开花的。”</p>
-<p>“哦。”我把目光继续向前移。</p>
-<p>“这个长寿花也很不错。”老板推荐道。</p>
-<p>我扫了一眼前面的花，回头说：“我选好了，就要这个，四季海棠，一眼就看中它了。”</p>
-<p>“选好了哦？”老板把花拿起来，放在手上端详了一会儿，“漂亮，这个真漂亮。”仿佛很不舍得。</p>
-<p>我让老板帮我把花装起来，顺便问道：“你还记得之前有个人给了钱之后又要回了五块钱吗？说自己经常来买花，是附近复旦读书的学生。我上次跟他们一起来的。”</p>
-<p>老板似乎想起来了，微笑道：“他是复旦的么？”</p>
-<p>“当然是，我们又不会说谎的。”</p>
-<p>“我送你一个垫子吧，放在花盆下面，可以接着点水。”他转身拿了一块垫子放在袋子底，问我有没有毕业，我说我已经毕业快三年了，他说看不出来，说我看起来像九零后，我笑着说哪里有。我怕万一遇到什么问题，可以咨询下他，便问他要了手机号，他笑我拿出的手机用的破成那样，也不换新的。我说很多年了，用习惯了。</p>
-<p>道谢之后，我从花店出来，拎着这么个小东西，心里想这下家里终于有个念想。</p>
-
-
-    <div class="separator"></div>
-</div>
-
-
-
-  
-<div class="post">
-  <h2>
-    <a href="/blog/2012/04/14/puff-girl" rel="bookmark" title="Permanent Link to 泡芙女孩">泡芙女孩</a> 
-  </h2>
-  <h4 style="margin-top: 0px;">
-    2012/04/14 · 
-
-
-<a href='/blog/category/life'>life</a> · <a href='/blog/category/fairy-tale'>fairy tale</a>
-
-  </h4>
-
-    
-  <p>我听说从前有个男孩，很喜欢吃泡芙，有一次调皮，在睡前小心翼翼的只把泡芙里的奶油吃掉，留下一个壳子，第二天竟然发现泡芙里有一个小女孩，便问她叫什么名字，女孩说不能说出自己的名字，一旦说出就会变回原型，不能待在这里了。男孩问会变成什么，女孩答这也不能说。</p>
-<p>就这样男孩有了玩伴，他让妈妈把每件上衣都缝一个口袋在前面，这样把女孩放在里面，可以一起吹风。男孩带着女孩跑遍了城市的每个角落，每到一个地方，他们总是开心的说笑，所有人都觉得男孩奇怪，因为他们只看到他一个人。</p>
-<p>小男孩慢慢长大了，一天早上忽然发现女孩不见了，他非常着急，翻箱倒柜，中间差点把泡芙小屋打破，可最终还是没有找到，他很伤心，呆坐床边，捧着空空的泡芙小屋。</p>
-<p>这时门铃响了，男孩开门发现一个跟他差不多年纪的女孩站在外面，微笑着看着他。这感觉似曾相识，然后他猛然明白过来，一把把女孩抱进来，知道他找到了他的泡芙女孩。</p>
 
 
     <div class="separator"></div>
