@@ -27,26 +27,36 @@
       </div>
 
       <div id="content" class="single">        
-
+  
 <div class="post">
   <h2>
-    <a href="/blog/2012/07/18/taste-jelly-bean" rel="bookmark" title="Permanent Link to 品尝 Jelly Bean">品尝 Jelly Bean</a> 
+    <a href="/blog/2012/01/05/move-to-blogofile" rel="bookmark" title="Permanent Link to 迁移到 blogofile">迁移到 blogofile</a> 
   </h2>
   <h4 style="margin-top: 0px;">
-    2012/07/18 · 
+    2012/01/05 · 
 
 
-<a href='/blog/category/android'>android</a> · <a href='/blog/category/tech'>tech</a>
+<a href='/blog/category/tech'>tech</a>
 
   </h4>
 
     
-  <p>今早我的 Galaxy Nexus 收到 OTA 更新通知，对于懒得刷机的我来说是个意外的惊喜。</p>
-<p>触屏滑动体验果然如<a href="http://www.android.com/about/jelly-bean/">官方所说</a>，有了极大的改进，摆脱了之前苦涩、跳动、突兀的滑动触感。在我看来仅仅是这一项，足以使 Jelly Bean 成为 Android 系统发展史中的一个里程碑。</p>
-<p>我个人迟迟不买 Android 手机的一个很大原因就是体验了很多 Android 设备后，再与 iOS 相比，始终觉得 Android 无法感知我的触控意图。得知 Jelly Bean 对此有显著的优化提升后，我才选择了最可能先升级的 Galaxy Nexus，希望能弥补之前的挫败感，结果没有令我失望。</p>
-<p>整体上 Android 与 iOS 的差距仍然巨大，使用两个星期之后，我只找到了寥寥几个高品质应用，市场上的应用多属于粗制滥造，即使是大公司出品，Android 版本与 iOS 版本相比，质量也有明显差距。</p>
-<p>当然 Android 也不是全无优点，由于开放，使得第三方输入法、文件传输等均比较方便，Android 4.0 之后更是开放了网络权限，无需 Root 权限也可以使用 OpenVPN，这对于国内用户来说非常方便。</p>
-<p>从技术上将，"Project Butter" 的成功也使我们对 Android 之后的技术升级之路有了信心。Android 之前的版本升级给人的感觉是技术功底不深，对软硬件的结合工作做的一直不是很到位，希望 Android 之后的版本能有更多的突破。</p>
+  <p>Octopress 蛮好用的。但还是有几个原因让我迁移：</p>
+<ul>
+<li>Octopress有点重，我只是想要一个简简单单的静态文件博客，可以灵活的定制，不需要太多功能，Blogofile 足够简单和灵活。</li>
+<li>Blogofile是基于Python的，也就意味着对我来说它的插件和模板系统上手很快。事实上，Blogofile init之后，我立刻就把它的URL生成方式改成了Octopress的方式，即由文章的文件名来指定文章路径。</li>
+<li>Octopress的Ruby环境安装起来实在不方便，可能是我太笨。可Blogofile只需easy_install一下就OK了。</li>
+</ul>
+<p>当然迁移之后我对Blogofile做了一点改动：</p>
+<ul>
+<li>做了一个简单的主题</li>
+<li>支持部署到Github Pages</li>
+<li>URL生成方式完全根据文件名，如2011-12-25-new-post.markdown 将部署到 2011/12/25/new-post</li>
+<li>用 sh _new.sh 帮助生成符合标准的markdown文件</li>
+</ul>
+<p>Blogofile 默认没有对部署到Github Pages进行支持，我就想了一个笨方法来实现：将Blogofile生成的_site目录作为Git repository，由于Blogofile build的时候会首先完全清空_site目录，所以我写了一个脚本自动备份_site中的隐藏文件和文件夹，Blogofile build完成之后再将隐藏文件移动过去，是不是很笨。。。</p>
+<p>如果你对这个改动后的模板感兴趣，可以在<a href="https://github.com/likang/blogofile">这里</a>找到。</p>
+<p>总之对于现在这个样子的站点我很满意，换了喜欢的主题，换了更贴心的工具。</p>
 
 
     <div class="separator"></div>
@@ -54,22 +64,12 @@
 
 
 
-
 <div id="pagination">
- <p class="alignleft">
-   « <a href="/blog/2012/07/17/hide-browser-scrollbar">隐藏滚动条</a>
- </p>
  <p class="alignright">
-   <a href="/blog/2012/07/28/leave-sina-weibo">离开微博</a> »
+   <a href="/blog/category/tech/1">新篇 »</a>
  </p>
 </div>
 <div class="break"></div>
-
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-  var disqus_url = "http://likang.me/blog/2012/07/18/taste-jelly-bean";
-</script>
       </div><!-- End Main Block -->
       <div id="footer" class="single">        
         <p id="credits">Likang.me uses <a href="http://www.ulfpettersson.se/design/modern/">Modern</a> and powered by <a href="http://www.blogofile.com">Blogofile</a>. 
