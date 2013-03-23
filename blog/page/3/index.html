@@ -30,6 +30,103 @@
   
 <div class="post">
   <h2>
+    <a href="/blog/2012/06/11/morse-im" rel="bookmark" title="Permanent Link to Morse IM">Morse IM</a> 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2012/06/11 · 
+
+
+<a href='/blog/category/tech'>tech</a>
+
+  </h4>
+
+    
+  <p>数月前无意看到<a href="http://getshacked.com/work/teletweet/">TeleTweet</a>这个APP，这是一个Twitter客户端，富有创意的是它允许使用者以发电报的方式来发推。TeleTweet提供了一个精致的模拟电报机，你只需按照摩尔斯电码轻敲屏幕上的模拟电键，一个个英文字码便蹦出来，绝妙。</p>
+<p>联想到Charles Petzold在《编码的奥秘》一书中所描述的两个小朋友通过手电筒交流的场景，我萌生了这样一个APP的想法：通过智能手机上的闪光灯实现“光通信”聊天 :P</p>
+<p>使用方式很简单，A首先输入一段英文，点击发送，然后将手机的闪光灯一册面向B，程序将文字转换为摩尔斯码，并控制闪光灯的闪烁。而B只需将自己的摄像头对着A，则程序自动将闪烁的光点翻译为文字展示出来。如此反复，便可实现基本的IM功能。</p>
+<p>程序的关键技术也应该不复杂，把文字编码为有规律的闪烁这个比较简单，而将闪烁还原成文字则需要一些专业知识。以我有限的图像处理知识来看，只需定时抓取摄像头的图像，灰度化之后寻找区域亮度的峰值，然后将连续的数据模拟化处理，便可大致还原成摩尔斯码的“嘀”和“嗒”，也就解码了文字。</p>
+<p>当然这样的APP是没有什么实用价值的，但却非常有意思。我目前没有更多的时间做个Demo出来，图像处理的知识也很有限，如果有人有兴趣做一个出来，我当第一个用户:D</p>
+
+
+    <div class="separator"></div>
+</div>
+
+
+
+  
+<div class="post">
+  <h2>
+    <a href="/blog/2012/05/19/reflekt" rel="bookmark" title="Permanent Link to Reflekt">Reflekt</a> 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2012/05/19 · 
+
+
+<a href='/blog/category/python'>python</a> · <a href='/blog/category/project'>project</a>
+
+  </h4>
+
+    
+  <p>公司之前有做过类似Q卡的项目，现在不做了，于是闲置下来很多机器，就是一般挂在电梯里或者便利店里的那种。于是团队决定拉回来几个放在办公室玩玩。</p>
+<p>机器有上下两个屏幕，下面的可触摸，系统是Ubuntu，我便想在这个上面可以玩点什么。想到之前在iOS上玩过一个叫<a href="http://itunes.apple.com/us/app/reflekt/id428836268?mt=8">Reflekt</a>的游戏，属于消除类，移动方块使得与镜面中的元素一致即可消除。而我们的机器有两个屏幕，正好可以当作镜面，于是我就想模拟一个出来放在上面玩玩。</p>
+<p>写Linux上的游戏我自然想到<a href="http://www.pygame.org">Pygame</a>，一个Python的2D游戏库，使用起来颇为简单，而且游戏本身也不复杂，所以实现起来还算容易。</p>
+<p>唯一复杂的部分在于，游戏窗口一般无法使用多线程来实现多窗口，只能通过多进程的方式，于是我需要开启两个相同的进程，一个作为主窗口，处理输入，并将相应的命令传递个另外一个窗口。而处理用户输入与发送命令之间需要异步操作，因此主进程中要开一个单独的线程来发送命令。将主进程接收的命令并传递到发送线程，采用Python内置的Queue队列实现，于是一个小小的程序，因为要多一点点多进程的交互，变得稍显复杂了起来。大致框架如下</p>
+<pre><code> +----------------------------+         +-----------------------------+
+ |        Main Process        |         |       Mirror Process        |
+ +----------------------------+         +-----------------------------+
+ |     +----------------+     |         |                             |
+ |     |   User Input   |     |         |                             |
+ |     +-------+--------+     |         |                             |
+ |             |              |         |                             |
+ |             | Queue        |         |                             |
+ |             v              |         |                             |
+ |     +----------------+     |         |     +-----------------+     |
+ |     |                |     |         |     |                 |     |
+ |     |                |     | socket  |     |                 |     |
+ |     | Sender Thread  +-------------------&gt; | Receiver Thread |     |
+ |     |                |     |         |     |                 |     |
+ |     +----------------+     |         |     +-----------------+     |
+ +----------------------------+         +-----------------------------+
+</code></pre>
+<p>目前还不完善，接下来要实现自动识别游戏结束，加入无尽模式。放在<a href="https://github.com/likang/reflekt">Github</a>上，有兴趣可以瞧一瞧。</p>
+
+
+    <div class="separator"></div>
+</div>
+
+
+
+  
+<div class="post">
+  <h2>
+    <a href="/blog/2012/05/15/battery-technology-revolution-required" rel="bookmark" title="Permanent Link to 电池技术需要一场革命">电池技术需要一场革命</a> 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2012/05/15 · 
+
+
+<a href='/blog/category/tech'>tech</a>
+
+  </h4>
+
+    
+  <p>上个礼拜,同事拿回来一台 The new iPad, 新搭载的Retina屏幕着实惊艳，翻阅书籍、杂志的感觉舒服的不得了，可美中不足的是，甚至可以说深深遗憾的是：仍然太重了。</p>
+<p>原因很简单：电池由上一版本的25Whr上升到了42.5Whr，容量足足提升了70%。实际上屏幕、处理器、主板等部件的重量和体积已经到达了合理的水平，而从iPad背部拆解图来看，3大块电池霸道的占据了绝大部分空间，有点惨不忍睹。</p>
+<p>大部分情况下iPad是最好的平板，这一点毫无疑问，但从一代以来就有的一个问题是，因为太重，不适合长时间手握，所以也就无法像Kindle那样随身携带，人们更多的是把iPad放在支架上，或者用身体的某个部位支撑着，才能长时间的使用，否则一定是累得手酸臂痛。</p>
+<p>问题不是现在才有，随着移动计算设备的流行，它们承载了过多的功能，用户对更强处理器、更清晰屏幕的需求导致设备耗电速度急速上升。早期手机的电量一般可用3-5天，现在最流行的iPhone/Android手机一般只能使用1天，尤其是出货量最大的Android，如果您再玩点游戏，可能连一天也支撑不了，这还是在电池容量翻一翻甚至翻两翻的情况下。</p>
+<p>试想如果电池可以做到轻薄容量大，会发生什么事呢？iPad只有目前的一半厚度，且重量跟一个大号手机差不多，我想这下没人不愿意在自己的包里腾出点空间给iPad了吧；手机充电一次可以使用起码一个月，背包客就不用发愁手机充电的事了。</p>
+<p>再想点别的，床头的台灯从此抛弃电线，随便把它拿到哪儿；甚至汽车也充电就跑，不用加油站了⋯⋯</p>
+<p>如此种种必将对现有的工业产品产生极大的影响，甚至可能催生出划时代的电子产品，称之为一场革命也并不为过。</p>
+
+
+    <div class="separator"></div>
+</div>
+
+
+
+  
+<div class="post">
+  <h2>
     <a href="/blog/2012/04/15/buying-flower" rel="bookmark" title="Permanent Link to 买花记">买花记</a> 
   </h2>
   <h4 style="margin-top: 0px;">
@@ -86,161 +183,6 @@
 <p>就这样男孩有了玩伴，他让妈妈把每件上衣都缝一个口袋在前面，这样把女孩放在里面，可以一起吹风。男孩带着女孩跑遍了城市的每个角落，每到一个地方，他们总是开心的说笑，所有人都觉得男孩奇怪，因为他们只看到他一个人。</p>
 <p>小男孩慢慢长大了，一天早上忽然发现女孩不见了，他非常着急，翻箱倒柜，中间差点把泡芙小屋打破，可最终还是没有找到，他很伤心，呆坐床边，捧着空空的泡芙小屋。</p>
 <p>这时门铃响了，男孩开门发现一个跟他差不多年纪的女孩站在外面，微笑着看着他。这感觉似曾相识，然后他猛然明白过来，一把把女孩抱进来，知道他找到了他的泡芙女孩。</p>
-
-
-    <div class="separator"></div>
-</div>
-
-
-
-  
-<div class="post">
-  <h2>
-    <a href="/blog/2012/04/13/calculate-character-width-in-python" rel="bookmark" title="Permanent Link to Python中计算字符宽度">Python中计算字符宽度</a> 
-  </h2>
-  <h4 style="margin-top: 0px;">
-    2012/04/13 · 
-
-
-<a href='/blog/category/python'>python</a>
-
-  </h4>
-
-    
-  <p>最近在用python写一个CLI小程序，其中涉及到计算字符宽度，目标是以友好的方式将一个长字符串截取为等宽的片段。</p>
-<p>对于unicode字符，python的len函数可以准确的计算其中所包含的字符个数，但是个数并不代表宽度，如：</p>
-<pre><code>&gt;&gt;&gt;len(u'你好a')
-3
-</code></pre>
-<p>因此无法简单的使用这种方式来计算宽度。</p>
-<h3>GBK decode</h3>
-<p>首先我想到<a href="http://zh.wikipedia.org/zh/GBK">GBK</a>编码，00–7F范围内的字符是一字节编码，其余是双字节编码，正好与字符的宽度大体一致，于是有了这样的投机取巧的办法（假设取8个宽度）：</p>
-<pre><code>&gt;&gt;&gt; a = u'hello你好'
-&gt;&gt;&gt; b=a.encode('gbk')
-&gt;&gt;&gt; try:
-...   print b[:8].decode('gbk')
-... except:
-...   print b[:7].decode('gbk')
-... 
-hello你
-</code></pre>
-<p>如代码所示，首先将unicode的字符串进行GBK编码，然后截取8个字节的宽度后尝试用GBK解码，若解码失败，则少截取一个宽度，截取7个字节后使用GBK解码。</p>
-<p>虽然初步解决了问题，但是这样做的硬伤很明显。首先代码不优雅，以试错的方式运行；其次GBK所能表示的字符有限，对于大量GBK编码以外的字符无法支持。</p>
-<h3>East_Asian_Width</h3>
-<p>徘徊很久之后，偶然发现 <a href="http://www.unicode.org/reports/tr44/tr44-4.html">Unicode Character Database</a>标准中有East_Asian_Width 属性，并有以下可能值：</p>
-<pre><code># East_Asian_Width (ea)
-
-ea ; A         ; Ambiguous    不确定
-ea ; F         ; Fullwidth    全宽
-ea ; H         ; Halfwidth    半宽
-ea ; N         ; Neutral      中性
-ea ; Na        ; Narrow       窄
-ea ; W         ; Wide         宽
-</code></pre>
-<p>其中除A不确定外，F/H/N/Na/W都能很明确的知道宽度，如果保守起见，将A视为宽度为2的话，则很容易给出单个字符的宽度：</p>
-<pre><code>&gt;&gt;&gt; import unicodedata
-&gt;&gt;&gt; def chr_width(c):
-...   if (unicodedata.east_asian_width(c) in ('F','W','A')):
-...     return 2
-...   else:
-...     return 1
-&gt;&gt;&gt; chr_width(u'你')
-2
-&gt;&gt;&gt; chr_width(u'a')
-1
-</code></pre>
-<p>到现在似乎已经可以满足要求了，但是实际使用中发现属性为A的字符真不少见，最典型的就是中文的双引号：</p>
-<pre><code>&gt;&gt;&gt; chr_width(u'”')
-2
-</code></pre>
-<p>在大多数等宽字体中，中文双引号都是只占一位宽的，如果一行里有多个中文双引号，则累加的误判宽度将会使截取效果大打折扣，无疑这也不是最好的办法。</p>
-<h3>urwid的解决方案</h3>
-<p><a href="http://excess.org/urwid/">urwid</a>是一个成熟的python终端UI库，它在curses的基础之上包装了类似HTML的控件用以显示文本内容，如果有这方面的开发需求，非常推荐此库，比直接使用curses库方便很多，非常棒的是它对unicode的文本宽度截取非常准确，让我大为惊讶，于是翻开它的源码一探究竟，文本宽度计算方面其核心代码如下：</p>
-<pre><code>widths = [
-    (126,    1), (159,    0), (687,     1), (710,   0), (711,   1), 
-    (727,    0), (733,    1), (879,     0), (1154,  1), (1161,  0), 
-    (4347,   1), (4447,   2), (7467,    1), (7521,  0), (8369,  1), 
-    (8426,   0), (9000,   1), (9002,    2), (11021, 1), (12350, 2), 
-    (12351,  1), (12438,  2), (12442,   0), (19893, 2), (19967, 1),
-    (55203,  2), (63743,  1), (64106,   2), (65039, 1), (65059, 0),
-    (65131,  2), (65279,  1), (65376,   2), (65500, 1), (65510, 2),
-    (120831, 1), (262141, 2), (1114109, 1),
-]
-
-def get_width( o ):
-    """Return the screen column width for unicode ordinal o."""
-    global widths
-    if o == 0xe or o == 0xf:
-        return 0
-    for num, wid in widths:
-        if o &lt;= num:
-            return wid
-    return 1
-</code></pre>
-<p>如代码所示，首先根据unicode的官方<a href="http://www.unicode.org/Public/4.0-Update/EastAsianWidth-4.0.0.txt">EastAsianWidth文档</a>整理出字符宽度的范围表，然后使用unicode代码查表。使用之前的例子测试：</p>
-<pre><code>&gt;&gt;&gt; get_width(ord(u'a'))
-1
-&gt;&gt;&gt; get_width(ord(u'你'))
-2
-&gt;&gt;&gt; get_width(ord(u'”'))
-1
-</code></pre>
-<p>完全准确，而且在实际应用中的表现也比较好，是一个理想的解决方案，更多技巧请查阅urwid的<a href="https://github.com/wardi/urwid/blob/master/urwid/old_str_util.py">old_str_util.py</a>源码。</p>
-
-
-    <div class="separator"></div>
-</div>
-
-
-
-  
-<div class="post">
-  <h2>
-    <a href="/blog/2012/04/12/i-have-a-window" rel="bookmark" title="Permanent Link to 我有一扇窗">我有一扇窗</a> 
-  </h2>
-  <h4 style="margin-top: 0px;">
-    2012/04/12 · 
-
-
-<a href='/blog/category/life'>life</a>
-
-  </h4>
-
-    
-  <p>我有一扇窗，早晨醒来，可以享受温暖的太阳；</p>
-<p>我有一扇窗，斜倚在窗口，可以看见夜晚的霓虹灯光；</p>
-<p>我有一扇窗，在这四月天，可以闻到桃花的清香；</p>
-<p>我有一扇窗，满载着世界，静静流淌。</p>
-
-
-    <div class="separator"></div>
-</div>
-
-
-
-  
-<div class="post">
-  <h2>
-    <a href="/blog/2012/04/12/two-leaves" rel="bookmark" title="Permanent Link to 两片树叶">两片树叶</a> 
-  </h2>
-  <h4 style="margin-top: 0px;">
-    2012/04/12 · 
-
-
-<a href='/blog/category/life'>life</a>
-
-  </h4>
-
-    
-  <p>有两片树叶，离的很近，但不在一枝上。</p>
-<p>刚发芽的时候，都对这个世界充满了好奇，微风吹过，细雨滑过，阳光，均匀的撒过。</p>
-<p>慢慢的，身子都舒展了开来，学会了随风摇曳，也注意到了旁边的那一片。却都默不做声。</p>
-<p>一天，起了大风，树叶们左摇右晃，几乎要离开树干，忽然，两片被风吹到了一起，划过的那一刻，发出沙的一声……很奇妙，两个都笑了，笑的哗哗的。</p>
-<p>秋天到了。</p>
-<p>“我可能要先下去了”，一片说，“希望落的不远”。</p>
-<p>大风又起。它纵身一跃，翻转在忽左忽右的风中……</p>
-<p>树上的另一片借着风向转身，努力搜寻着地面，“看见你了……”，可惜地上的它听不到。</p>
-<p>一个午后，“刚才你在空中真美”一片对另一片说。</p>
 
 
     <div class="separator"></div>

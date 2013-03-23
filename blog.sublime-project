@@ -1,0 +1,9 @@
+{
+	"folders":
+	[
+		{
+			"path": "~/Projects/blog",
+			"folder_exclude_patterns": ["_site", "images"]
+		}
+	]
+}
