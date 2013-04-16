@@ -7,12 +7,34 @@
   <title type="text">东篱</title>
   <subtitle type="text">文字打败时间</subtitle>
 
-  <updated>2013-03-23T15:50:42Z</updated>
+  <updated>2013-04-16T01:38:19Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://likang.me/blog" />
   <id>http://likang.me/blog/feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://likang.me/blog/feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://likang.me/blog</uri>
+    </author>
+    <title type="html"><![CDATA[银河]]></title>
+    <link rel="alternate" type="text/html" href="http://likang.me/blog/2013/04/16/galaxy" />
+    <id>http://likang.me/blog/2013/04/16/galaxy</id>
+    <updated>2013-04-16T09:30:49Z</updated>
+    <published>2013-04-16T09:30:49Z</published>
+    <category scheme="http://likang.me/blog" term="life" />
+    <summary type="html"><![CDATA[银河]]></summary>
+    <content type="html" xml:base="http://likang.me/blog/2013/04/16/galaxy"><![CDATA[<p>天空升起了一颗从未出现过的星星，巨大，却不耀眼，像夜晚的篝火。</p>
+<p>荧星人的世界比平时更亮了些，连我们身上的荧光也跳动起来，仿佛是要孵化的卵，准备破壳而出。</p>
+<p>这种感觉很奇妙，我和伙伴们久久的望着天空中的这位陌生人，隐约觉得一件重要的事情要发生在我们身边。</p>
+<p>身上的荧光流转的越来越快，剧烈的跳动催促我们向前走。我这才发现我的身边已聚满了荧星人，每个人身上的荧光都比以往更加明亮，大家彼此没有说话，静静像荧星大峡谷走去，那里应该可以更加靠近这位天外来客。</p>
+<p>峡谷的崖边挤满了人，大家望着天空，身上有一股力量慢慢变的强烈，心里有点躁动，仿佛在等待什么。</p>
+<p>突然，“噌”的一声从离我不远的地方传来，一位荧星人跳下了峡谷！他身后的光线像一根绳子，飘向漆黑的谷底。人群开始活动起来，不断的有光线飘向谷底。我浑身变得滚烫，眼前的漆黑竟有了神奇的魅力，我感觉它知道所有我想要知道的奥秘。</p>
+<p>我还在犹豫，不断的伸头往下看。忽然不知是谁从后面挤过来，连我一起挤了下去！我正要生气，回头看原来是好朋友小远。他调皮的伸伸舌头，看到我冲他笑，不好意思的转头飘向别处，这是我们的告别。</p>
+<p>我的身体在慢慢消融，闪耀着越来越炽白的光芒。我看不到未来，也几乎忘了过去，一个人坠向未知的深渊。</p>
+<p>不知过了多久，我经过了一颗蓝色星球。在即将熄灭的时候，我隐约照见了一双牵着的手。</p>]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
@@ -293,35 +315,5 @@ System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
 &lt;/body&gt;
 </code></pre>
 <p>大功告成。原生的滚动条不见了，通过监听元素的 scroll 事件我们可以自定义的各种样式的滚动条。</p>]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://likang.me/blog</uri>
-    </author>
-    <title type="html"><![CDATA[胡杨]]></title>
-    <link rel="alternate" type="text/html" href="http://likang.me/blog/2012/06/19/hu-yang" />
-    <id>http://likang.me/blog/2012/06/19/hu-yang</id>
-    <updated>2012-06-19T08:13:38Z</updated>
-    <published>2012-06-19T08:13:38Z</published>
-    <category scheme="http://likang.me/blog" term="life" />
-    <summary type="html"><![CDATA[胡杨]]></summary>
-    <content type="html" xml:base="http://likang.me/blog/2012/06/19/hu-yang"><![CDATA[<p>胡杨是我在火车上认识的一位52岁的阿姨。阿姨年轻时去过新疆，“胡杨”是她的网名。</p>
-<p>阿姨跟我是老乡，生活在皖北的一个三线城市里。去上海的火车上我住中铺，她住下铺。我见阿姨面相和善，在帮她将行李箱放在行李架上之后，便盘腿坐在对面的下铺上跟她聊上两句。</p>
-<p>得知她的火车票是自己在网上订的之后，我表示诧异，再知道她为了订到下铺，两次取消订单，第三次成功订到，发现她对网上订火车票比我了解的还多（我没想过订完后看上中下铺，也不知道每天有两次取消订单的机会），我很佩服，接着攀谈起来，之后我所了解的就让我大吃一惊了：</p>
-<ol>
-<li>阿姨自己网上买的火车票/飞机票，并在网上查找地铁、公交等换乘路线，并用百度知道来对具体行程进行提问</li>
-<li>熟练使用淘宝、当当等网购网站，生活中大部分商品均是通过网络购买</li>
-<li>懂得淘宝网的商业模式！知道沉淀的现金流是淘宝盈利的主要途径</li>
-<li>懂得通过 URL 来辨别钓鱼网站，有基本的防骗、放钓鱼经验</li>
-<li>尝试性投资黄金，了解金价和美元/欧元的正负相关性，于是在美国副总统拜登访华、法国总统萨克齐访华之前均对金价的波动做出了准确的预估</li>
-<li>对目前国内的社会保障、医疗保障、教育体系的不足有明确的认识</li>
-<li>谈政治，对党内政治斗争和宣传手段有一定的认识，熟悉敏感词，意外的是阿姨是 BO 的粉丝</li>
-<li>从亲友那里了解欧美生活的基本形态，对欧美的基本法律、税收等制度有一定了解 </li>
-<li>好学，经常网上查资料、看帖到很晚，夜猫子一枚</li>
-</ol>
-<p>对于这样有趣的人我绝不放过:D 我们在车厢关灯后继续聊到了接近12点，最终由于对面下铺女孩的抗议才终止，当然意犹未尽，第二天早起又接着聊起来了……</p>
-<p>52岁了，阿姨并没有像身边大多数同龄人一样，或纠缠于家长里短，或闭塞无知而浑浑噩噩的活着。</p>
-<p>为她的人生喝彩。</p>]]></content>
   </entry>
 </feed>
