@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+    <title>东篱</title>
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed" />
+    <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/blog/feed/atom" />
+    <link rel='stylesheet' href='/styles/screen.css' type='text/css' />
+    <link rel='stylesheet' href='/styles/prettify.css' type='text/css' />
+  </head>
+  <body>
+    <div id="page">      
+      <div id="header">
+        <ul>
+          <li><a href="/">首页</a></li>
+          <li><a href="/blog">归档</a></li>
+          <li><a href="/projects">项目</a></li>
+          <li><a href="/blog/feed">订阅</a></li>
+          <li><a href="http://www.douban.com/people/efence/">豆瓣</a></li>
+          <li><a href="https://github.com/likang">GITHUB</a></li>
+        </ul>
+        <h1><a href="/">东篱</a></h1>
+      </div>
+      <div id="pagestripe">
+        <div id="pageblock"></div>
+      </div>
+
+      <div id="content" class="single">        
+
+<div class="post">
+  <h2>
+    <a href="/blog/2013/06/05/python-pycrypto-aes-ecb-pkcs-5" rel="bookmark" title="Permanent Link to 使用 PyCrypto 进行 AES/ECB/PKCS#5(7) 加密">使用 PyCrypto 进行 AES/ECB/PKCS#5(7) 加密</a> 
+  </h2>
+  <h4 style="margin-top: 0px;">
+    2013/06/05 · 
+
+
+<a href='/blog/category/tech'>tech</a>
+
+  </h4>
+
+    
+  <p><a href="https://www.dlitz.net/software/pycrypto/">PyCrypto</a> 是流行的 Python 加密/解密库。但是其 AES 的 ECB 模式在加密解密时未提供适合的密文填充工具，因此有必要自己实现一个，下面是常见的 <a href="http://en.wikipedia.org/wiki/Padding_(cryptography)">PKCS#5 / PKCS#7</a> 填充模式的一般写法：</p>
+<pre><code>'''
+PKCS#5 padding is identical to PKCS#7 padding, except that 
+it has only been defined for block ciphers that use a 64 bit (8 byte) 
+block size.
+But in AES, there is no block of 8 bit, so PKCS#5 is PKCS#7.
+'''
+BS = AES.block_size
+pad = lambda s: s + (BS - len(s) % BS) * chr(BS - len(s) % BS)
+unpad = lambda s : s[0:-ord(s[-1])]
+</code></pre>
+<p>在进行加密/解密前，只需使用 pad/unpad 进行填充/截断即可。下面是具体实例：</p>
+<pre><code># -*- coding: utf-8 -*-
+from Crypto.Cipher import AES
+import os
+
+BS = AES.block_size
+pad = lambda s: s + (BS - len(s) % BS) * chr(BS - len(s) % BS)
+unpad = lambda s : s[0:-ord(s[-1])]
+
+key = os.urandom(16) # the length can be (16, 24, 32)
+text = 'to be encrypted'
+
+cipher = AES.new(key)
+
+encrypted = cipher.encrypt(pad(text)).encode('hex')
+print encrypted  # will be something like 'f456a6b0e54e35f2711a9fa078a76d16'
+
+decrypted = unpad(cipher.decrypt(encrypted.decode('hex')))
+print decrypted  # will be 'to be encrypted'
+</code></pre>
+<p>提醒一点，PKCS#5 和 PKCS#7 唯一的区别就是前者规定了数据块大小是 64 比特(8 字节)，而 AES 中数据块大小是 128 比特(16字节)，因此在 AES 中， PKCS#5 和 PKCS#7 没有区别。</p>
+<p>顺便提一下，在 Java 中偶尔遇到如下方式获取 AES 实例：</p>
+<pre><code>Cipher cipher = javax.crypto.Cipher.getInstance("AES")
+</code></pre>
+<p>但是在文档 <a href="http://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#Cipher">Java™ Cryptography Architecture Standard Algorithm Name Documentation</a> 以及 <a href="http://docs.oracle.com/javase/7/docs/api/javax/crypto/Cipher.html#getInstance(java.lang.String)">Cipher Java doc</a> 中并未直接说明这种方式所使用的模式以及填充方式。而AES默认的 Provider <a href="http://www.docjar.com/html/api/com/sun/crypto/provider/AESCipher.java.html">AESCipher</a> 中则有所说明，其使用的默认模式和填充方式正是 ECB 和 PKCS5Padding。今天写一个 Python 工具需要与 Java 通讯，我使用的 Java 库正是使用上述方式构造 Cipher，所以进行了一番了解。</p>
+
+
+    <div class="separator"></div>
+</div>
+
+
+
+
+<div id="pagination">
+ <p class="alignleft">
+   « <a href="/blog/2013/04/16/galaxy">银河</a>
+ </p>
+</div>
+<div class="break"></div>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_url = "http://likang.me/blog/2013/06/05/python-pycrypto-aes-ecb-pkcs-5";
+</script>
+      </div><!-- End Main Block -->
+      <div id="footer" class="single">        
+        <p id="credits">Likang.me uses <a href="http://www.ulfpettersson.se/design/modern/">Modern</a> and powered by <a href="http://www.blogofile.com">Blogofile</a>. 
+        <br/></p>
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+
+    <script type="text/javascript" src="/javascripts/prettify.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            if (!document.getElementsByTagName) return;
+            var codes = document.getElementsByTagName("code");
+            for (var i=0; i < codes.length; i++) {
+                codes[i].className = "prettyprint";
+            }
+            prettyPrint();
+        }
+    </script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32376704-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  </body>
+</html>
+
+
+
